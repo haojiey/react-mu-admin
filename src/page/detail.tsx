@@ -3,5 +3,5 @@ export default function Detail() {
     .then((response) => response.json())
     .then((json) => console.log(json))
 
-  return <div>详情页</div>
+  return <div>详情页测试</div>
 }
