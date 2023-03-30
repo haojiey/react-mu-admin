@@ -20,21 +20,18 @@ module.exports = {
     { name: 'config' },
     { name: 'docs' },
     { name: 'src' },
+    { name: 'router' },
+    { name: 'utils' },
     { name: 'examples' },
     { name: 'play' }
   ],
   messages: {
     type: '请选择提交类型(必填):',
-    // scope: '请选择一个scope (可选):',
-    // customScope: '请输入文件修改范围(可选):',
-    // used if allowCustomScopes is true
     subject: '请简要描述提交(必填):',
     body: '请输入详细描述，使用"|"换行(可选):\n',
-    // breaking: '列出任务非兼容性说明 (可选):\n',
-    // footer: '请输入要关闭的issue，例如：#12, #34(可选):\n',
     confirmCommit: '确定提交此说明吗？'
   },
-  allowCustomScopes: false,
+  allowCustomScopes: true,
   allowBreakingChanges: ['feat', 'fix'],
   // 限制 subject 长度
   subjectLimit: 72
