@@ -1,0 +1,24 @@
+ls:
+  src/*:
+    .js: kebab-case | PascalCase
+    .vue: PascalCase | regex:^index
+    .ts: PascalCase | kebab-case
+    .tsx: PascalCase | kebab-case
+    .d.ts: kebab-case
+    .mock.ts: kebab-case
+    .data.ts: camelCase | kebab-case
+    .test-d.ts: kebab-case
+    .less: kebab-case | PascalCase
+    .spec.ts: camelCase | PascalCase
+
+ignore:
+  - node_modules
+  - .git
+  - .circleci
+  - .github
+  - .vscode
+  - .idea
+  - dist
+  - .local
+  - .husky
+  - public

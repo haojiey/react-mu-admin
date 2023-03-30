@@ -1,0 +1,5 @@
+/dist/*
+/public/*
+/src/design/theme/*
+*.tsx
+index.html
