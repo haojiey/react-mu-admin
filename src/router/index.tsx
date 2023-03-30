@@ -1,7 +1,7 @@
+import { createBrowserRouter } from 'react-router-dom'
+
 import Detail from '../page/Detail'
 import LIST from '../page/List'
-
-import { createBrowserRouter } from 'react-router-dom'
 
 const routes = createBrowserRouter([
   {

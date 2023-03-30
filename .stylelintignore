@@ -1,4 +1,5 @@
 /dist/*
+/MuDist/*
 /public/*
 /src/design/theme/*
 *.tsx

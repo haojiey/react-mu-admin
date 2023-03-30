@@ -8,6 +8,7 @@
 .local
 index.html
 dist
+MuDist
 node_modules
 Dockerfile
 /public

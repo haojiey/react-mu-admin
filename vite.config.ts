@@ -1,13 +1,11 @@
 import { resolve } from 'path'
-import type { UserConfig, ConfigEnv } from 'vite'
-import vitePluginImp from 'vite-plugin-imp'
+import type { ConfigEnv, UserConfig } from 'vite'
 import { loadEnv } from 'vite'
 
-import { createProxy } from './build/vite/porxy'
+import { CHUNK_SIZE_WARNING_LIMIT, OUT_DIR } from './build/constant'
 import { wrapperEnv } from './build/utils'
-import react from '@vitejs/plugin-react'
-
-import { themePreprocessorPlugin } from '@zougt/vite-plugin-theme-preprocessor'
+import { vitePlugins } from './build/vite/plugin'
+import { createProxy } from './build/vite/proxy'
 
 // https://vitejs.dev/config/
 export default ({ command, mode }: ConfigEnv): UserConfig => {
@@ -19,39 +17,7 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
   const { VITE_PORT, VITE_PROXY } = wrapperEnv(env)
 
   return {
-    plugins: [
-      react(),
-      themePreprocessorPlugin({
-        less: {
-          // Enable Dynamic theme mode.
-          arbitraryMode: false,
-          // Default theme color，It is usually the same as a theme color (@primary-color) in src/theme/theme-vars.less .
-          // Only one item of multipleScopeVars
-          multipleScopeVars: [
-            {
-              scopeName: 'theme-default',
-              path: resolve('src/design/theme/default.less')
-            },
-            {
-              scopeName: 'theme-dark',
-              path: resolve('src/design/theme/dark.less')
-            }
-          ]
-        }
-      }),
-      vitePluginImp()
-      // vitePluginImp({
-      //   libList: [
-      //     {
-      //       libName: "antd",
-      //       style(name) {
-      //         // use less
-      //         return `antd/es/${name}/style/index.js`;
-      //       },
-      //     },
-      //   ],
-      // }),
-    ],
+    plugins: vitePlugins(),
     server: {
       port: VITE_PORT,
       // Load proxy configuration from .env
@@ -60,7 +26,18 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
         overlay: true
       }
     },
+    build: {
+      outDir: OUT_DIR,
+      terserOptions: {
+        compress: {
+          drop_console: true,
+          drop_debugger: true
+        }
+      },
+      chunkSizeWarningLimit: CHUNK_SIZE_WARNING_LIMIT
+    },
     resolve: {
+      // set alias
       alias: {
         '/@/': resolve(__dirname, 'src') + '/'
       }
@@ -69,9 +46,6 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
       // user javascriptEnabled
       preprocessorOptions: {
         less: {
-          // modifyVars: {
-          //   "primary-color": "#9890ff",
-          // },
           javascriptEnabled: true
         }
       }

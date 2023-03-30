@@ -1,4 +1,4 @@
-// .cz-config.cjs
+// .cz-config.js
 module.exports = {
   types: [
     { value: ':sparkles: feat', name: '✨ feat: 一项新功能' },

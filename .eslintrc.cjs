@@ -17,7 +17,7 @@ module.exports = {
     },
     sourceType: 'module'
   },
-  plugins: ['react'],
+  plugins: ['react', 'simple-import-sort'],
   globals: {
     __DEV__: false,
     __dirname: false,
@@ -53,25 +53,26 @@ module.exports = {
     ],
 
     /** import导入顺序规则*/
-    // 'import/order': [
-    //   'error',
-    //   {
-    //     'newlines-between': 'always',
-    //     groups: ['builtin', 'external', 'internal', 'sibling'], // 分组排序
-    //     alphabetize: {
-    //       order: 'asc' /* sort in ascending order. Options: ['ignore', 'asc', 'desc'] */,
-    //       caseInsensitive: false /* ignore case. Options: [true, false] */
-    //     }, // 每个组中的顺序进行排序
-    //     pathGroups: [
-    //       {
-    //         pattern: '/@/**',
-    //         group: 'sibling',
-    //         position: 'after'
-    //       }
-    //     ],
-    //     pathGroupsExcludedImportTypes: ['builtin']
-    //   }
-    // ],
+    'simple-import-sort/imports': [
+      'error',
+      {
+        groups: [
+          // react放在首行
+          ['^react', '^@?\\w'],
+          // 内部导入
+          ['^(@|components)(/.*|$)'],
+          // 父级导入. 把 `..` 放在最后.
+          ['^\\.\\.(?!/?$)', '^\\.\\./?$'],
+          // 同级导入. 把同一个文件夹.放在最后
+          ['^\\./(?=.*/)(?!/?$)', '^\\.(?!/?$)', '^\\./?$'],
+          // 样式导入.
+          ['^.+\\.?(css)$'],
+          // 带有副作用导入，比如import 'a.css'这种.
+          ['^\\u0000']
+        ]
+      }
+    ],
+    'simple-import-sort/exports': 'error', // 导出
     // 禁止 function 定义中出现重名参数
     'no-dupe-args': 2,
     // 禁止对象字面量中出现重复的 key
@@ -274,7 +275,7 @@ module.exports = {
     // 强制在块之前使用一致的空格
     'space-before-blocks': [2, 'always'],
     // 强制在 function的左括号之前使用一致的空格
-    'space-before-function-paren': [2, 'always'],
+    'space-before-function-paren': [0, 'always'],
     // 强制在圆括号内使用一致的空格
     'space-in-parens': [2, 'never'],
     // 要求操作符周围有空格

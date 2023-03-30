@@ -1,4 +1,5 @@
 /dist/*
+/MuDist/*
 /public/*
 /node_modules/**
 .local

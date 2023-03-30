@@ -1,15 +1,16 @@
+import { MessageOutlined } from '@ant-design/icons'
 import {
-  Form,
-  Select,
-  InputNumber,
-  DatePicker,
-  Switch,
-  Slider,
   Button,
+  DatePicker,
+  Divider,
+  Form,
+  InputNumber,
   Rate,
-  Typography,
+  Select,
+  Slider,
   Space,
-  Divider
+  Switch,
+  Typography
 } from 'antd'
 
 const { Option } = Select
@@ -25,6 +26,7 @@ function change() {
 
 const List = () => (
   <>
+    <MessageOutlined style={{ fontSize: '16px', color: '#08c' }} />;
     <section style={{ textAlign: 'center', marginTop: 48, marginBottom: 40 }}>
       <Space align="start">
         <img
