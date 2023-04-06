@@ -18,7 +18,8 @@ export interface Request {
 }
 
 export interface RequestConfig extends RequestDataConfig {
-  params: object | undefined
+  params?: object | undefined
+  baseURL?: string
 }
 
 export interface CreateOptions extends AxiosRequestConfig {

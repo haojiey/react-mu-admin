@@ -7,7 +7,8 @@ import { isString } from '/@/utils/is'
 const { uesErrorMsg } = useMessage()
 
 export function OptimizedData(config: RequestConfig) {
-  let { data, method } = config
+  let { data, method, baseURL, url } = config
+  // config.url = baseURL + url
 
   if (method == 'get' || method == 'delete') {
     const t = {

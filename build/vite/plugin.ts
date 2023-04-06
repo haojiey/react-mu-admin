@@ -3,8 +3,13 @@ import { themePreprocessorPlugin } from '@zougt/vite-plugin-theme-preprocessor'
 import { resolve } from 'path'
 import type { Plugin } from 'vite'
 import vitePluginImp from 'vite-plugin-imp'
+import { viteMockServe } from 'vite-plugin-mock'
 
-export function vitePlugins() {
+interface PluginConf {
+  VITE_USE_MOCK: boolean
+}
+
+export function vitePlugins(config: PluginConf) {
   const plugins: (Plugin | Plugin[])[] = []
 
   plugins.push(react())
@@ -31,6 +36,17 @@ export function vitePlugins() {
   )
 
   plugins.push(vitePluginImp({}))
+
+  plugins.push(
+    viteMockServe({
+      mockPath: 'src/mock',
+      localEnabled: true,
+      injectCode: `
+      import { setupProdMockServer } from 'mock/index';
+        setupProdMockServer();
+      `
+    })
+  )
 
   return plugins
 }

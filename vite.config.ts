@@ -14,10 +14,10 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
   // The boolean type read by loadEnv is a string. This function can be converted to boolean type
   const env = loadEnv(mode, root)
 
-  const { VITE_PORT, VITE_PROXY } = wrapperEnv(env)
+  const { VITE_PORT, VITE_PROXY, VITE_USE_MOCK } = wrapperEnv(env)
 
   return {
-    plugins: vitePlugins(),
+    plugins: vitePlugins({ VITE_USE_MOCK }),
     server: {
       port: VITE_PORT,
       // Load proxy configuration from .env

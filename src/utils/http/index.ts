@@ -11,5 +11,5 @@ function createAxios(options: CreateOptions) {
   })
 }
 export const defaultRequest = createAxios({
-  baseURL: '/'
+  baseURL: 'api/'
 })
