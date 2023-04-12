@@ -1,17 +1,46 @@
-import { createBrowserRouter } from 'react-router-dom'
+import { lazy } from 'react'
+import { useRoutes } from 'react-router-dom'
 
-import Detail from '../page/Detail'
-import LIST from '../page/List'
+import { RoutersProps } from './interface/index'
+import { LayoutIndex } from './constant'
+import lazyLoad from './utils'
 
-const routes = createBrowserRouter([
+import Login from '/@/page/login/index'
+
+const routers = [
   {
     path: '/',
-    element: <LIST />
+    element: <LayoutIndex />,
+    children: []
   },
   {
-    path: '/detail',
-    element: <Detail />
+    path: '/login',
+    element: <Login />
   }
-])
+]
 
-export default routes
+function filterAsyncRouter(routes: RoutersProps[], routers: RoutersProps[]) {
+  routes.map((route: RoutersProps, index: number) => {
+    const URL = `/@/page/${route.element}.tsx`
+    let Module = lazyLoad(lazy(() => import(URL)))
+    routers[index] = {
+      path: route.path,
+      element: route.element ? Module : null
+    }
+    if (route.children && route.children.length) {
+      routers[index].children = filterAsyncRouter(route.children, routers[index].children || [])
+    }
+  })
+  return routers
+}
+
+function useLazy(routes: RoutersProps[]) {
+  filterAsyncRouter(routes, routers[0].children)
+}
+
+const Router = () => {
+  const routes = useRoutes(routers)
+  return routes
+}
+
+export { Router, useLazy }

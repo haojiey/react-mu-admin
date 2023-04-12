@@ -25,7 +25,7 @@ module.exports = {
     'selector-max-id': 3, // 限制一个选择器中 ID 选择器的数量
     'max-nesting-depth': 4,
     indentation: [
-      2,
+      4,
       {
         // 指定缩进  warning 提醒
         severity: 'warning'

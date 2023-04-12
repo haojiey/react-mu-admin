@@ -9,5 +9,5 @@ export default function Detail() {
     console.log(res)
   })
 
-  return <div>详情页测试</div>
+  return <div className="content-card">详情页测试</div>
 }

@@ -25,7 +25,7 @@ function change() {
 }
 
 const List = () => (
-  <>
+  <div className="card">
     <MessageOutlined style={{ fontSize: '16px', color: '#08c' }} />;
     <section style={{ textAlign: 'center', marginTop: 48, marginBottom: 40 }}>
       <Space align="start">
@@ -81,7 +81,7 @@ const List = () => (
         </Space>
       </Form.Item>
     </Form>
-  </>
+  </div>
 )
 
 export default List

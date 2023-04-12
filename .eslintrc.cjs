@@ -101,7 +101,7 @@ module.exports = {
     // 禁止覆盖受限制的标识符
     'no-shadow-restricted-names': 2,
     // 禁止将变量初始化为 undefined
-    'no-undef-init': 2,
+    'no-undef-init': 1,
     // 禁止将 undefined 作为标识符
     'no-undefined': 0,
     // 不允许在变量定义之前使用它们
@@ -143,7 +143,7 @@ module.exports = {
     'func-names': 0,
     // 文件末尾强制换行
     'eol-last': 2,
-    indent: ['error', 2],
+    indent: ['error', 4],
     // 要求或禁止在函数标识符和其调用之间有空格
     'func-call-spacing': 2,
     // 强制在对象字面量的属性中键和值之间使用一致的间距
@@ -395,7 +395,7 @@ module.exports = {
     //  //防止使用未包装的JSX字符串
     // "react/jsx-no-literals": 0,
     // 在JSX中禁止未声明的变量
-    'react/jsx-no-undef': 2,
+    'react/jsx-no-undef': 0,
     // 为用户定义的JSX组件强制使用PascalCase
     'react/jsx-pascal-case': 0,
     // 防止反应被错误地标记为未使用
@@ -431,6 +431,7 @@ module.exports = {
       }
     ],
     // 禁止未使用的变量
-    'no-unused-vars': 0
+    'no-unused-vars': 0,
+    'no-undef': 0
   }
 }
