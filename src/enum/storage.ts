@@ -1,3 +1,3 @@
 export const storageEnum = {
-  PREFIX: 'VITE_MU_'
+    PREFIX: 'VITE_MU_'
 }

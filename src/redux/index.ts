@@ -3,7 +3,7 @@ import reduxThunk from 'redux-thunk'
 
 import menu from './modules/menu/reducer'
 const reducer = combineReducers({
-  menu
+    menu
 })
 
 let store = createStore(reducer, applyMiddleware(reduxThunk))

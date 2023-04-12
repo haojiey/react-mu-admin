@@ -3,13 +3,13 @@ import Request from './request'
 import { CreateOptions } from './types'
 
 function createAxios(options: CreateOptions) {
-  return new Request({
-    baseURL: '/',
-    timeout: 30 * 1000,
-    headers: { 'Content-Type': 'application/json;charset=UTF-8' },
-    ...options
-  })
+    return new Request({
+        baseURL: '/',
+        timeout: 30 * 1000,
+        headers: { 'Content-Type': 'application/json;charset=UTF-8' },
+        ...options
+    })
 }
 export const defaultRequest = createAxios({
-  baseURL: 'api/'
+    baseURL: 'api/'
 })

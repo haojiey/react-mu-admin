@@ -15,27 +15,27 @@ import './index.less'
 import logo from '/@/assets/svg/logo.svg'
 
 const LayoutHeader = () => {
-  const { Header } = Layout
+    const { Header } = Layout
 
-  return (
-    <Header>
-      <div className="header-lf flex items-center">
-        <div className="logo flex items-center">
-          <img src={logo} alt="logo" className="logo-img" />
-          <h2 className="logo-text">Mu Admin</h2>
-        </div>
-        <CollapseIcon />
-        <Bread />
-      </div>
-      <div className="header-ri flex items-center">
-        <NotifyIcon />
-        <ThemeIcon />
-        <FullScreenIcon />
-        <UserName />
-        <AvatarIcon />
-      </div>
-    </Header>
-  )
+    return (
+        <Header>
+            <div className="header-lf flex items-center">
+                <div className="logo flex items-center">
+                    <img src={logo} alt="logo" className="logo-img" />
+                    <h2 className="logo-text">Mu Admin</h2>
+                </div>
+                <CollapseIcon />
+                <Bread />
+            </div>
+            <div className="header-ri flex items-center">
+                <NotifyIcon />
+                <ThemeIcon />
+                <FullScreenIcon />
+                <UserName />
+                <AvatarIcon />
+            </div>
+        </Header>
+    )
 }
 
 export default LayoutHeader
