@@ -7,7 +7,6 @@
         "build": "tsc && vite build",
         "preview": "vite preview",
         "prepare": "husky install",
-        "commit": "git add . && cz-customizable",
         "standard-version": "standard-version",
         "check:eslint": "eslint \"{src,mock}/**/*.{ts,tsx}\" --fix",
         "check:prettier": "prettier --write --loglevel warn \"src/**/*.{js,ts,json,tsx,css,less,scss,html,md}\"",
@@ -15,11 +14,6 @@
         "lint:lint-staged": "lint-staged -c ./.husky/lint-staged.config.cjs",
         "lint:ls-lint": "ls-lint",
         "lint:pretty": "pretty-quick --staged"
-    },
-    "config": {
-        "commitizen": {
-            "path": "node_modules/cz-customizable"
-        }
     },
     "dependencies": {
         "@ant-design/icons": "^5.0.1",
@@ -54,11 +48,7 @@
         "@vitejs/plugin-react": "^3.1.0",
         "@zougt/some-loader-utils": "^1.4.3",
         "@zougt/vite-plugin-theme-preprocessor": "^1.4.8",
-        "commitizen": "^4.3.0",
-        "commitlint-config-cz": "^0.13.3",
-        "commitlint-config-gitmoji": "^2.3.1",
         "cz-conventional-changelog": "^3.3.0",
-        "cz-customizable": "^7.0.0",
         "eslint": "^8.37.0",
         "eslint-config-prettier": "^8.8.0",
         "eslint-define-config": "^1.17.0",
