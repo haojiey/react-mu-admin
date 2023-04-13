@@ -1,14 +1,16 @@
+import type { InternalAxiosRequestConfig } from 'axios'
+
 import { RequestConfig } from './types'
 
-import { httpEnum } from '/@/enum/http'
+import { HttpEnum } from '/@/enum/http'
+import { MenuEnum } from '/@/enum/menu'
 import { useMessage } from '/@/hooks/message'
+import { clearPersistor } from '/@/redux/index'
+import { store } from '/@/redux/index'
 import { isString } from '/@/utils/is'
-
 const { uesErrorMsg } = useMessage()
-
 export function OptimizedData(config: RequestConfig) {
-    let { data, method, baseURL, url } = config
-    // config.url = baseURL + url
+    let { data, method } = config
 
     if (method == 'get' || method == 'delete') {
         const t = {
@@ -34,39 +36,51 @@ export function OptimizedData(config: RequestConfig) {
     return config
 }
 
+export function RequestBefore(req: InternalAxiosRequestConfig) {
+    const token = store.getState().user.token
+    if (!token) {
+        req.headers.token = token
+    }
+    return req
+}
+
 export function ResponseSuccess(res: any) {
     const { code, data } = res.data
 
-    if (code === httpEnum.SUCCESS) {
+    if (code === HttpEnum.SUCCESS) {
         return data
     }
 
-    if (code === httpEnum.NO_AUTHORITY) {
-        // TODO:登出
-        // return data
+    if (code === HttpEnum.OVERDUE) {
+        uesErrorMsg('登陆超时,请重新登录!')
+        clearPersistor()
+        window.location.hash = MenuEnum.BASE_LOGIN
+        return data
     }
 
-    if (code === httpEnum.TIMEOUT) {
+    if (code === HttpEnum.TIMEOUT) {
         uesErrorMsg('接口请求超时,请刷新页面重试!')
         return 'error'
     }
+
+    return Promise.reject(res.data)
 }
 
 export function ResponseFailure(e: any) {
     const { code, message } = e || {}
     const err: string = e?.toString?.() ?? ''
     try {
-        if (code === httpEnum.TIMEOUT && message.indexOf('timeout') !== -1) {
+        if (code === HttpEnum.TIMEOUT && message.indexOf('timeout') !== -1) {
             uesErrorMsg('请求超时')
             throw new Error('请求超时')
         }
         if (err?.includes('Network Error')) {
             uesErrorMsg('网络异常')
-            return
         }
     } catch (error) {
         throw new Error(error)
     }
+    return e
 }
 
 const filterNullParams = (params: any) => {

@@ -1,13 +1,35 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { connect } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 import { LockOutlined, UserOutlined } from '@ant-design/icons'
 import { Button, Checkbox, Form, Input } from 'antd'
-const LoginForm: React.FC = () => {
-    const onFinish = (values: any) => {
-        console.log('Success:', values)
-    }
 
-    const onFinishFailed = (errorInfo: any) => {
-        console.log('Failed:', errorInfo)
+import { login } from '/@/api/login'
+import { MenuEnum } from '/@/enum/menu'
+import { useMessage } from '/@/hooks/message'
+import { LoginApiForm } from '/@/interface/index'
+import { clearPersistor } from '/@/redux'
+import { setName, setToken } from '/@/redux/modules/user/action'
+
+const LoginForm: React.FC = (props: any) => {
+    const { setToken, setName } = props
+    const { uesErrorMsg, uesSuccessMsg } = useMessage()
+    const [loading, setLoading] = useState<boolean>(false)
+    const navigate = useNavigate()
+
+    const onFinish = async (values: LoginApiForm.ReqForm) => {
+        try {
+            setLoading(true)
+            const { token } = await login(values)
+            setToken(token)
+            setName(values.username)
+            uesSuccessMsg('登陆成功')
+            navigate(MenuEnum.BASE_HOME)
+        } catch (error: any) {
+            uesErrorMsg(error.message)
+        } finally {
+            setLoading(false)
+        }
     }
 
     return (
@@ -16,13 +38,12 @@ const LoginForm: React.FC = () => {
             wrapperCol={{ span: 24 }}
             initialValues={{ remember: true }}
             onFinish={onFinish}
-            onFinishFailed={onFinishFailed}
             autoComplete="off"
             size="large"
             className="login-forms"
         >
             <Form.Item name="username" rules={[{ required: true, message: '请输入用户名' }]}>
-                <Input placeholder="用户名：admin / user" prefix={<UserOutlined />} />
+                <Input placeholder="用户名：admin" prefix={<UserOutlined />} />
             </Form.Item>
 
             <Form.Item name="password" rules={[{ required: true, message: '请输入密码' }]}>
@@ -47,6 +68,7 @@ const LoginForm: React.FC = () => {
                     type="primary"
                     htmlType="submit"
                     icon={<UserOutlined />}
+                    loading={loading}
                     className="login-btn"
                 >
                     登陆
@@ -56,4 +78,4 @@ const LoginForm: React.FC = () => {
     )
 }
 
-export default LoginForm
+export default connect((state: any) => state.user, { setToken, setName })(LoginForm)

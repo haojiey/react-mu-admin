@@ -1,1 +1,31 @@
 @import url('./public.less');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#root {
+    height: 100%;
+    min-width: 800px;
+
+    .ant-spin-nested-loading {
+        height: 100%;
+    }
+
+    .ant-spin-container {
+        height: 100%;
+    }
+
+    .root-loading {
+        max-height: 100%;
+    }
+}
+
+.ant-message-custom-content {
+    display: flex;
+    align-items: center;
+
+    .anticon {
+        top: 0 !important;
+    }
+}

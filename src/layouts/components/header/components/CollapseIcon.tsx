@@ -5,7 +5,6 @@ import { updateCollapse } from '/@/redux/modules/menu/action'
 
 const CollapseIcon = (props: any) => {
     const { isCollapse, updateCollapse } = props
-    console.log(props, isCollapse)
     return (
         <div
             className="collapsed flex items-center"

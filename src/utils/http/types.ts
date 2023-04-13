@@ -17,6 +17,17 @@ export interface Request {
     error: string
 }
 
+export interface Result<T = any> {
+    code: number
+    status: number
+    type: 'success' | 'error' | 'warning'
+    message: string
+    msg?: string
+    data?: string
+    result: T
+    size: T
+    error: string
+}
 export interface RequestConfig extends RequestDataConfig {
     params?: object | undefined
     baseURL?: string

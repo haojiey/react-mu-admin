@@ -1,12 +1,9 @@
 import { Dispatch } from 'react'
 
 import { getMenuList } from '/@/api/menu/index'
+import { Menu, MenuProps } from '/@/interface'
 import * as types from '/@/redux/constant'
 
-interface MenuProps {
-    type: string
-    menuList: Menu.MenuOptions[]
-}
 export const updateCollapse = (isCollapse: boolean) => ({
     type: types.UPDATE_COLLAPSE,
     isCollapse

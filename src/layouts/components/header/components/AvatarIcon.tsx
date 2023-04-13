@@ -1,26 +1,25 @@
-import { connect } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { ExclamationCircleOutlined } from '@ant-design/icons'
 import type { MenuProps } from 'antd'
 import { Avatar, Dropdown, message, Modal } from 'antd'
 
 import avatar from '/@/assets/images/avatar.png'
+import { clearPersistor } from '/@/redux'
 
-const AvatarIcon = (props: any) => {
-    const { setToken } = props
+const AvatarIcon = () => {
     const navigate = useNavigate()
 
     // 退出登录
     const logout = () => {
         Modal.confirm({
-            title: '温馨提示 🧡',
+            title: '温馨提示',
             icon: <ExclamationCircleOutlined />,
             content: '是否确认退出登录？',
             okText: '确认',
             cancelText: '取消',
             onOk: () => {
-                setToken('')
-                message.success('退出登录成功！')
+                clearPersistor()
+                message.success('退出成功！')
                 navigate('/login')
             }
         })
@@ -60,5 +59,4 @@ const AvatarIcon = (props: any) => {
     )
 }
 
-const mapDispatchToProps = {}
-export default connect(null, mapDispatchToProps)(AvatarIcon)
+export default AvatarIcon

@@ -5,9 +5,109 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mu Admin</title>
+    <style>
+      .root-loading {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background: #f4f7f9;
+      }
+
+      .root-loading .root-loading-wrap {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: flex;
+        -webkit-transform: translate3d(-50%, -50%, 0);
+        transform: translate3d(-50%, -50%, 0);
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      .root-loading .root-loading-title {
+        display: flex;
+        width: 100px;
+        margin-top: 40px;
+        font-size: 30px;
+        color: rgba(0, 0, 0, 0.85);
+        justify-content: center;
+        align-items: center;
+      }
+
+      #root-loading-animation {
+        position: relative;
+        width: 100%;
+      }
+
+      #root-loading-animation span {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background: #0c89ff;
+        border-radius: 20px;
+        opacity: 0.5;
+        animation: app-loading-animation 1s infinite ease-in-out;
+      }
+
+      #root-loading-animation span:nth-child(2) {
+        left: 20px;
+        animation-delay: 0.2s;
+      }
+
+      #root-loading-animation span:nth-child(3) {
+        left: 40px;
+        animation-delay: 0.4s;
+      }
+
+      #root-loading-animation span:nth-child(4) {
+        left: 60px;
+        animation-delay: 0.6s;
+      }
+
+      #root-loading-animation span:nth-child(5) {
+        left: 80px;
+        animation-delay: 0.8s;
+      }
+      @keyframes app-loading-animation {
+        0% {
+          opacity: 0.3;
+          transform: translateY(0);
+          box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+        }
+
+        50% {
+          background: #688cfd;
+          opacity: 1;
+          transform: translateY(-10px);
+          box-shadow: 0 20px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        100% {
+          opacity: 0.3;
+          transform: translateY(0);
+          box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+        }
+      }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <div class="root-loading">
+        <div class="root-loading-wrap">
+          <div id="root-loading-animation">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </div>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

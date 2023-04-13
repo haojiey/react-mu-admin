@@ -1,9 +1,14 @@
 import { lazy } from 'react'
 import { useRoutes } from 'react-router-dom'
 
+import Layouts from '../layouts/index'
+
 import { RoutersProps } from './interface/index'
-import { LayoutIndex } from './constant'
-import lazyLoad from './utils'
+import Auth from './auth'
+import LazyLoad from './LazyLoad'
+
+// default layouts
+export const LayoutIndex = () => <Layouts />
 
 import Login from '/@/page/login/index'
 
@@ -22,10 +27,15 @@ const routers = [
 function filterAsyncRouter(routes: RoutersProps[], routers: RoutersProps[]) {
     routes.map((route: RoutersProps, index: number) => {
         const URL = `/@/page/${route.element}.tsx`
-        let Module = lazyLoad(lazy(() => import(URL)))
+        // 懒加载动态路由
+        // 都设置为 ‘/’ 的子路由，只需要引入一个LayoutIndex
+        let Module: JSX.Element | any = LazyLoad(lazy(() => import(URL)))
+        const { meta } = route
+        const ele = meta?.auth ? <Auth>{Module}</Auth> : Module
+
         routers[index] = {
             path: route.path,
-            element: route.element ? Module : null
+            element: route.element ? ele : null
         }
         if (route.children && route.children.length) {
             routers[index].children = filterAsyncRouter(

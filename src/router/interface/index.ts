@@ -2,6 +2,7 @@ import type React from 'react'
 
 export interface MetaProps {
     title?: string
+    auth?: boolean
     keepAlive?: boolean
 }
 

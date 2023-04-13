@@ -7,7 +7,7 @@ const antIcon = <LoadingOutlined style={{ fontSize: 24 }} spin />
 
 const Loading = ({ tip = 'Loading' }: { tip?: string }) => (
     <div id="loading">
-        <Spin tip={tip} size="default" className="loading" indicator={antIcon} />
+        <Spin tip={tip} size="default" className="loading" indicator={antIcon}></Spin>
     </div>
 )
 

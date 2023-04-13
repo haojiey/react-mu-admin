@@ -24,7 +24,6 @@ function getItem(
         type
     } as MenuItem
 }
-// 获取菜单列表并处理成 antd menu 需要的格式
 
 // submenu keys of first level
 const rootSubmenuKeys = ['sub1', 'sub2', 'sub4']
@@ -33,6 +32,7 @@ const rootSubmenuKeys = ['sub1', 'sub2', 'sub4']
 const customIcons: { [key: string]: any } = Icons
 const addIcon = (name: string) => React.createElement(customIcons[name])
 
+// 处理菜单的格式
 const deepLoopFloat = (menuList: Menu.MenuOptions[], newArr: MenuItem[] = [], path = '') => {
     menuList.forEach((item: Menu.MenuOptions) => {
         if (!item?.children?.length) {

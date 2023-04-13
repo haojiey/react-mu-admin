@@ -5,14 +5,12 @@ import Bread from '../bread'
 import AvatarIcon from './components/AvatarIcon'
 import CollapseIcon from './components/CollapseIcon'
 import FullScreenIcon from './components/FullScreenIcon'
+import Logo from './components/Logo'
 import NotifyIcon from './components/NotifyIcon'
 import ThemeIcon from './components/ThemeIcon'
 import UserName from './components/UserName'
 
 import './index.less'
-
-// import logo from '/@/assets/images/logo.png';
-import logo from '/@/assets/svg/logo.svg'
 
 const LayoutHeader = () => {
     const { Header } = Layout
@@ -20,10 +18,7 @@ const LayoutHeader = () => {
     return (
         <Header>
             <div className="header-lf flex items-center">
-                <div className="logo flex items-center">
-                    <img src={logo} alt="logo" className="logo-img" />
-                    <h2 className="logo-text">Mu Admin</h2>
-                </div>
+                <Logo />
                 <CollapseIcon />
                 <Bread />
             </div>

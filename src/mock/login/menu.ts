@@ -8,7 +8,10 @@ export default [
                     icon: 'HomeOutlined',
                     path: 'home',
                     element: 'home/index',
-                    title: '首页'
+                    title: '首页',
+                    meta: {
+                        auth: true
+                    }
                 },
                 {
                     icon: 'FileTextOutlined',
@@ -25,13 +28,19 @@ export default [
                             icon: 'AppstoreOutlined',
                             path: 'account',
                             element: 'system/account/index',
-                            title: '账号管理'
+                            title: '账号管理',
+                            meta: {
+                                auth: true
+                            }
                         },
                         {
                             icon: 'ProfileOutlined',
                             path: 'menu',
                             element: 'system/menu/index',
-                            title: '菜单管理'
+                            title: '菜单管理',
+                            meta: {
+                                auth: true
+                            }
                         }
                     ]
                 }
