@@ -8,7 +8,6 @@ import { login } from '/@/api/login'
 import { MenuEnum } from '/@/enum/menu'
 import { useMessage } from '/@/hooks/message'
 import { LoginApiForm } from '/@/interface/index'
-import { clearPersistor } from '/@/redux'
 import { setName, setToken } from '/@/redux/modules/user/action'
 
 const LoginForm: React.FC = (props: any) => {

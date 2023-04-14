@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 import { useLocation, useNavigate } from 'react-router-dom'
-import { AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons'
 import * as Icons from '@ant-design/icons'
 import type { MenuProps } from 'antd'
 import { Menu } from 'antd'
 
 import './index.less'
+
+import { Menu as MenuType } from '/@/interface'
+
 type MenuItem = Required<MenuProps>['items'][number]
 
 function getItem(
@@ -25,16 +27,13 @@ function getItem(
     } as MenuItem
 }
 
-// submenu keys of first level
-const rootSubmenuKeys = ['sub1', 'sub2', 'sub4']
-
 // 动态渲染 Icon 图标
 const customIcons: { [key: string]: any } = Icons
 const addIcon = (name: string) => React.createElement(customIcons[name])
 
 // 处理菜单的格式
-const deepLoopFloat = (menuList: Menu.MenuOptions[], newArr: MenuItem[] = [], path = '') => {
-    menuList.forEach((item: Menu.MenuOptions) => {
+const deepLoopFloat = (menuList: MenuType.MenuOptions[], newArr: MenuItem[] = [], path = '') => {
+    menuList.forEach((item: MenuType.MenuOptions) => {
         if (!item?.children?.length) {
             return newArr.push(getItem(item.title, `${path}/${item.path}`, addIcon(item.icon!)))
         }
@@ -53,8 +52,8 @@ const deepLoopFloat = (menuList: Menu.MenuOptions[], newArr: MenuItem[] = [], pa
 const Sider: React.FC = (props: any) => {
     const { menuList: menus } = props
     const [openKeys, setOpenKeys] = useState(['/home'])
-    const [defSelectKeys, setDefSelectKeys] = useState(['/home/index'])
-
+    const { pathname } = useLocation()
+    const [defSelectKeys] = useState([pathname])
     const [menuList, setMenuList] = useState<MenuItem[]>([])
 
     // getMenuList
@@ -66,11 +65,7 @@ const Sider: React.FC = (props: any) => {
 
     const onOpenChange: MenuProps['onOpenChange'] = (keys) => {
         const latestOpenKey = keys.find((key) => openKeys.indexOf(key) === -1)
-        if (rootSubmenuKeys.indexOf(latestOpenKey!) === -1) {
-            setOpenKeys(keys)
-        } else {
-            setOpenKeys(latestOpenKey ? [latestOpenKey] : [])
-        }
+        setOpenKeys(latestOpenKey ? [latestOpenKey] : [])
     }
 
     // 点击当前菜单跳转页面

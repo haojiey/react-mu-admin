@@ -1,5 +1,5 @@
 import { lazy } from 'react'
-import { useRoutes } from 'react-router-dom'
+import { Navigate, useRoutes } from 'react-router-dom'
 
 import Layouts from '../layouts/index'
 
@@ -14,9 +14,14 @@ import Login from '/@/page/login/index'
 
 const routers = [
     {
-        path: '/',
+        path: '/*',
         element: <LayoutIndex />,
-        children: []
+        children: [
+            {
+                path: '/*',
+                element: <Navigate to="/home" />
+            }
+        ]
     },
     {
         path: '/login',

@@ -14,7 +14,7 @@ const antIcon = <LoadingOutlined style={{ fontSize: 24 }} spin />
 
 const App = (props: any) => {
     const { getMenuListAction, name } = props
-    const [_, setRoutes] = useState([])
+    const [, setRoutes] = useState([])
     const [loading, setLoading] = useState(false)
 
     useEffect(() => {
