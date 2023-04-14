@@ -39,21 +39,44 @@ export default [
                 },
                 {
                     icon: 'FileTextOutlined',
+                    path: 'users',
+                    element: 'users/index',
+                    title: '个人信息'
+                },
+                {
+                    icon: 'FileTextOutlined',
                     path: 'error',
-                    element: 'error/index',
-                    title: '错误页面'
+                    title: '错误页面',
+                    children: [
+                        {
+                            icon: 'AppstoreOutlined',
+                            path: '403',
+                            element: 'error/403/index',
+                            title: '403页面'
+                        },
+                        {
+                            icon: 'AppstoreOutlined',
+                            path: '404',
+                            element: 'error/404/index',
+                            title: '404页面'
+                        }
+                    ]
                 },
                 {
                     icon: 'FileTextOutlined',
                     path: 'components',
-                    element: 'components/index',
-                    title: '常用组件'
-                },
-                {
-                    icon: 'FileTextOutlined',
-                    path: 'users',
-                    element: 'users/index',
-                    title: '个人信息'
+                    title: '常用组件',
+                    children: [
+                        {
+                            icon: 'AppstoreOutlined',
+                            path: 'icon',
+                            element: 'components/icon/index',
+                            title: 'ICON 图标',
+                            meta: {
+                                auth: true
+                            }
+                        }
+                    ]
                 },
                 {
                     icon: 'FileTextOutlined',
@@ -71,15 +94,6 @@ export default [
                             path: 'account',
                             element: 'system/account/index',
                             title: '账号管理',
-                            meta: {
-                                auth: true
-                            }
-                        },
-                        {
-                            icon: 'AppstoreOutlined',
-                            path: 'notify',
-                            element: 'system/notify/index',
-                            title: '消息管理',
                             meta: {
                                 auth: true
                             }

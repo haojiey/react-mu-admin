@@ -1,0 +1,79 @@
+{
+  "id": "4015400",
+  "name": "react-mu-admin",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "122687",
+      "name": "all",
+      "font_class": "all",
+      "unicode": "e696",
+      "unicode_decimal": 59030
+    },
+    {
+      "icon_id": "122692",
+      "name": "comments",
+      "font_class": "comments",
+      "unicode": "e69b",
+      "unicode_decimal": 59035
+    },
+    {
+      "icon_id": "122693",
+      "name": "cry",
+      "font_class": "cry",
+      "unicode": "e69c",
+      "unicode_decimal": 59036
+    },
+    {
+      "icon_id": "122694",
+      "name": "delete",
+      "font_class": "delete",
+      "unicode": "e69d",
+      "unicode_decimal": 59037
+    },
+    {
+      "icon_id": "122695",
+      "name": "edit",
+      "font_class": "edit",
+      "unicode": "e69e",
+      "unicode_decimal": 59038
+    },
+    {
+      "icon_id": "122711",
+      "name": "set",
+      "font_class": "set",
+      "unicode": "e6ae",
+      "unicode_decimal": 59054
+    },
+    {
+      "icon_id": "28660959",
+      "name": "Bell",
+      "font_class": "Bell",
+      "unicode": "e655",
+      "unicode_decimal": 58965
+    },
+    {
+      "icon_id": "28660968",
+      "name": "Clothes",
+      "font_class": "Clothes",
+      "unicode": "e656",
+      "unicode_decimal": 58966
+    },
+    {
+      "icon_id": "28675770",
+      "name": "Fullscreen Exit",
+      "font_class": "a-FullscreenExit",
+      "unicode": "e66e",
+      "unicode_decimal": 58990
+    },
+    {
+      "icon_id": "28675785",
+      "name": "Fullscreen",
+      "font_class": "Fullscreen",
+      "unicode": "e66f",
+      "unicode_decimal": 58991
+    }
+  ]
+}

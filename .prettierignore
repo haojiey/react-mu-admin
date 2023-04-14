@@ -1,6 +1,7 @@
 /dist/*
 /MuDist/*
 /public/*
+/src/assets/aliFont/*
 /node_modules/**
 .local
 .output.js

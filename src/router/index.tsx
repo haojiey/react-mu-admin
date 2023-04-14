@@ -10,6 +10,8 @@ import LazyLoad from './LazyLoad'
 // default layouts
 export const LayoutIndex = () => <Layouts />
 
+import Error403 from '/@/page/error/403/index'
+import Error404 from '/@/page/error/404/index'
 import Login from '/@/page/login/index'
 
 const routers = [
@@ -22,6 +24,14 @@ const routers = [
                 element: <Navigate to="/home" />
             }
         ]
+    },
+    {
+        path: '/error/403',
+        element: <Error403 />
+    },
+    {
+        path: '/error/404',
+        element: <Error404 />
     },
     {
         path: '/login',

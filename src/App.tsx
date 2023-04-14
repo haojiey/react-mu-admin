@@ -4,6 +4,8 @@ import { HashRouter } from 'react-router-dom'
 import { LoadingOutlined } from '@ant-design/icons'
 import { Spin } from 'antd'
 
+import '/@/assets/aliFont/iconfont.css'
+
 import '/@/design/index.less'
 
 import { store } from '/@/redux/index'

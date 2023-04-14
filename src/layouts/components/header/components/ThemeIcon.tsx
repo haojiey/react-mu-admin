@@ -1,4 +1,3 @@
-import { SkinOutlined } from '@ant-design/icons'
 import { toggleTheme } from '@zougt/vite-plugin-theme-preprocessor/dist/browser-utils'
 
 const ThemeIcon = () => {
@@ -9,8 +8,8 @@ const ThemeIcon = () => {
     }
 
     return (
-        <div className="mx-[8px] flex cursor-pointer">
-            <SkinOutlined className="text-[19px]" onClick={changeTheme} />
+        <div className="mx-[8px] flex cursor-pointer" onClick={changeTheme}>
+            <i className="iconfont icon-Clothes font-black text-[20px]" />
         </div>
     )
 }

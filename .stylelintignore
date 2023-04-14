@@ -1,6 +1,7 @@
 /dist/*
 /MuDist/*
 /public/*
+/src/assets/aliFont/*
 /src/design/theme/*
 *.tsx
 index.html
