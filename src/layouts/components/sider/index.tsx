@@ -35,11 +35,13 @@ const addIcon = (name: string) => React.createElement(customIcons[name])
 const deepLoopFloat = (menuList: MenuType.MenuOptions[], newArr: MenuItem[] = [], path = '') => {
     menuList.forEach((item: MenuType.MenuOptions) => {
         if (!item?.children?.length) {
-            return newArr.push(getItem(item.title, `${path}/${item.path}`, addIcon(item.icon!)))
+            return newArr.push(
+                getItem(item?.meta?.title, `${path}/${item.path}`, addIcon(item.icon!))
+            )
         }
         newArr.push(
             getItem(
-                item.title,
+                item?.meta?.title,
                 `${path}/${item.path}`,
                 addIcon(item.icon!),
                 deepLoopFloat(item.children, [], `${path}/${item.path}`)
@@ -51,15 +53,21 @@ const deepLoopFloat = (menuList: MenuType.MenuOptions[], newArr: MenuItem[] = []
 
 const Sider: React.FC = (props: any) => {
     const { menuList: menus } = props
-    const [openKeys, setOpenKeys] = useState(['/home'])
+    const [openKeys, setOpenKeys] = useState([])
     const { pathname } = useLocation()
     const [defSelectKeys] = useState([pathname])
     const [menuList, setMenuList] = useState<MenuItem[]>([])
 
     // getMenuList
     const getMenuData = async () => {
-        if (menus.length) {
-            setMenuList(deepLoopFloat(menus))
+        const tempMenus: MenuType.MenuOptions[] = []
+        menus.map((item: MenuType.MenuOptions) => {
+            if (item.element === 'Layout' && item.children) {
+                tempMenus.push(...item.children)
+            }
+        })
+        if (tempMenus.length) {
+            setMenuList(deepLoopFloat(tempMenus))
         }
     }
 

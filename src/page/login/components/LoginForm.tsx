@@ -9,7 +9,7 @@ import { MenuEnum } from '/@/enum/menu'
 import { useMessage } from '/@/hooks/message'
 import { LoginApiForm } from '/@/interface/index'
 import { setName, setToken } from '/@/redux/modules/user/action'
-
+import { clearInfo } from '/@/redux/modules/user/action'
 const LoginForm: React.FC = (props: any) => {
     const { setToken, setName } = props
     const { uesErrorMsg, uesSuccessMsg } = useMessage()
@@ -18,6 +18,7 @@ const LoginForm: React.FC = (props: any) => {
 
     const onFinish = async (values: LoginApiForm.ReqForm) => {
         try {
+            clearInfo()
             setLoading(true)
             const { token } = await login(values)
             setToken(token)
@@ -77,4 +78,4 @@ const LoginForm: React.FC = (props: any) => {
     )
 }
 
-export default connect((state: any) => state.user, { setToken, setName })(LoginForm)
+export default connect((state: any) => state.user, { setToken, setName, clearInfo })(LoginForm)

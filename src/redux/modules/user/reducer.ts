@@ -20,6 +20,11 @@ const user = (state: UserInfoState = userState, action: AnyAction) =>
             case types.SET_NAME:
                 draftState.name = action.name
                 break
+            case types.CLEAR_INFO:
+                draftState.name = ''
+                draftState.auth = ''
+                draftState.token = ''
+                break
             default:
                 return draftState
         }

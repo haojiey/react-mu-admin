@@ -48,7 +48,6 @@ const Index: React.FC = () => {
             .then((res) => res.json())
             .then((res) => {
                 const newData = data.concat(res.results)
-                console.log(res)
                 setData(newData)
                 setList(newData)
                 setLoading(false)

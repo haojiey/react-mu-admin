@@ -7,16 +7,16 @@ type ProxyList = ProxyItem[]
  * @param list
  */
 export function createProxy(list: ProxyList = []) {
-  if (!Array.isArray(list)) {
-    return
-  }
-  const ret = {}
-  for (const [prefix, target] of list) {
-    ret[prefix] = {
-      target: target,
-      changeOrigin: true,
-      rewrite: (path) => path.replace(new RegExp(`^${prefix}`), '')
+    if (!Array.isArray(list)) {
+        return
     }
-  }
-  return ret
+    const ret = {}
+    for (const [prefix, target] of list) {
+        ret[prefix] = {
+            target: target,
+            changeOrigin: true,
+            rewrite: (path) => path.replace(new RegExp(`^${prefix}`), '')
+        }
+    }
+    return ret
 }

@@ -11,3 +11,8 @@ export const setName = (name: string) => ({
     type: types.SET_NAME,
     name
 })
+
+// * clearInfo
+export const clearInfo = () => ({
+    type: types.CLEAR_INFO
+})

@@ -1,12 +1,14 @@
+import { connect } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { ExclamationCircleOutlined } from '@ant-design/icons'
 import type { MenuProps } from 'antd'
 import { Avatar, Dropdown, message, Modal } from 'antd'
 
 import avatar from '/@/assets/images/avatar.png'
-import { clearPersistor } from '/@/redux'
+import { MenuEnum } from '/@/enum/menu'
+import { clearInfo } from '/@/redux/modules/user/action'
 
-const AvatarIcon = () => {
+const AvatarIcon = ({ clearInfo }: any) => {
     const navigate = useNavigate()
 
     // 退出登录
@@ -18,9 +20,10 @@ const AvatarIcon = () => {
             okText: '确认',
             cancelText: '取消',
             onOk: () => {
-                clearPersistor()
+                // clearPersistor()
+                clearInfo()
                 message.success('退出成功！')
-                navigate('/login')
+                navigate(MenuEnum.BASE_LOGIN)
             }
         })
     }
@@ -59,4 +62,4 @@ const AvatarIcon = () => {
     )
 }
 
-export default AvatarIcon
+export default connect(null, { clearInfo })(AvatarIcon)

@@ -9,21 +9,14 @@ import LazyLoad from './LazyLoad'
 
 // default layouts
 export const LayoutIndex = () => <Layouts />
-
 import Error403 from '/@/page/error/403/index'
 import Error404 from '/@/page/error/404/index'
 import Login from '/@/page/login/index'
 
-const routers = [
+const routers: RoutersProps[] = [
     {
-        path: '/*',
-        element: <LayoutIndex />,
-        children: [
-            {
-                path: '/*',
-                element: <Navigate to="/home" />
-            }
-        ]
+        path: '/',
+        element: <Navigate to="login" />
     },
     {
         path: '/error/403',
@@ -34,24 +27,30 @@ const routers = [
         element: <Error404 />
     },
     {
-        path: '/login',
+        path: 'login',
         element: <Login />
     }
 ]
 
 function filterAsyncRouter(routes: RoutersProps[], routers: RoutersProps[]) {
     routes.map((route: RoutersProps, index: number) => {
-        const URL = `/@/page/${route.element}.tsx`
-        // 懒加载动态路由
-        // 都设置为 ‘/’ 的子路由，只需要引入一个LayoutIndex
-        let Module: JSX.Element | any = LazyLoad(lazy(() => import(URL)))
+        let Module: JSX.Element | any = ''
         const { meta } = route
-        const ele = meta?.auth ? <Auth>{Module}</Auth> : Module
 
-        routers[index] = {
-            path: route.path,
-            element: route.element ? ele : null
+        if (route.element === 'Layout') {
+            routers[index] = {
+                element: <LayoutIndex />
+            }
+        } else {
+            const URL = `/@/page/${route.element}.tsx`
+            Module = LazyLoad(lazy(() => import(URL)))
+            const ele = meta?.auth ? <Auth>{Module}</Auth> : Module
+            routers[index] = {
+                path: route.path,
+                element: route.element ? ele : null
+            }
         }
+
         if (route.children && route.children.length) {
             routers[index].children = filterAsyncRouter(
                 route.children,
@@ -63,7 +62,13 @@ function filterAsyncRouter(routes: RoutersProps[], routers: RoutersProps[]) {
 }
 
 function useLazy(routes: RoutersProps[]) {
-    filterAsyncRouter(routes, routers[0].children)
+    const tempRoutes: RoutersProps[] = []
+    filterAsyncRouter(routes, tempRoutes)
+    routers.push(...tempRoutes)
+    routers.push({
+        path: '*',
+        element: <Navigate to="/error/404" />
+    })
 }
 
 const Router = () => {
