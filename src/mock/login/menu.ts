@@ -160,10 +160,28 @@ export default [
                             children: [
                                 {
                                     icon: 'AppstoreOutlined',
-                                    path: 'test',
-                                    element: 'forms/index',
+                                    path: 'normal',
+                                    element: 'forms/normal/index',
                                     meta: {
-                                        title: '测试',
+                                        title: '常规表单',
+                                        auth: true
+                                    }
+                                },
+                                {
+                                    icon: 'AppstoreOutlined',
+                                    path: 'check',
+                                    element: 'forms/check/index',
+                                    meta: {
+                                        title: '校验表单',
+                                        auth: true
+                                    }
+                                },
+                                {
+                                    icon: 'AppstoreOutlined',
+                                    path: 'query',
+                                    element: 'forms/query/index',
+                                    meta: {
+                                        title: '高级查询表单',
                                         auth: true
                                     }
                                 }
