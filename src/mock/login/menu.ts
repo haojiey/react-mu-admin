@@ -131,7 +131,8 @@ export default [
                             icon: 'FileTextOutlined',
                             path: 'components',
                             meta: {
-                                title: '常用组件'
+                                title: '常用组件',
+                                auth: true
                             },
                             children: [
                                 {
@@ -139,8 +140,23 @@ export default [
                                     path: 'icon',
                                     element: 'components/icon/index',
                                     meta: {
-                                        auth: true,
                                         title: 'ICON 图标'
+                                    }
+                                },
+                                {
+                                    icon: 'AppstoreOutlined',
+                                    path: 'modal',
+                                    element: 'components/modal/index',
+                                    meta: {
+                                        title: '弹窗'
+                                    }
+                                },
+                                {
+                                    icon: 'AppstoreOutlined',
+                                    path: 'upload',
+                                    element: 'components/upload/index',
+                                    meta: {
+                                        title: '上传文件'
                                     }
                                 }
                             ]
