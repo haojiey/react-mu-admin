@@ -10,7 +10,7 @@ export default [
                 }
             }
             const params = {
-                token: 'hfejahfjeafe6612gjuiouio37812gjhg321'
+                token: 'hfejahfjeafe6612gjuiouio37812gjhg3213'
             }
             return {
                 code: 200,

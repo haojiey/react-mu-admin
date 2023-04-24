@@ -18,7 +18,7 @@ const LoginForm: React.FC = (props: any) => {
 
     const onFinish = async (values: LoginApiForm.ReqForm) => {
         try {
-            clearInfo()
+            props.clearInfo()
             setLoading(true)
             const { token } = await login(values)
             setToken(token)
