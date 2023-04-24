@@ -10,4 +10,5 @@ export interface UserInfoState {
     name: string
     auth: string
     token: string
+    permissions: string[]
 }

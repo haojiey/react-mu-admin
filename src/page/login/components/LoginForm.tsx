@@ -8,20 +8,21 @@ import { login } from '/@/api/login'
 import { MenuEnum } from '/@/enum/menu'
 import { useMessage } from '/@/hooks/message'
 import { LoginApiForm } from '/@/interface/index'
-import { setName, setToken } from '/@/redux/modules/user/action'
+import { setName, setPermissions, setToken } from '/@/redux/modules/user/action'
 import { clearInfo } from '/@/redux/modules/user/action'
 const LoginForm: React.FC = (props: any) => {
-    const { setToken, setName } = props
+    const { setToken, setName, clearInfo, setPermissions } = props
     const { uesErrorMsg, uesSuccessMsg } = useMessage()
     const [loading, setLoading] = useState<boolean>(false)
     const navigate = useNavigate()
 
     const onFinish = async (values: LoginApiForm.ReqForm) => {
         try {
-            props.clearInfo()
+            clearInfo()
             setLoading(true)
-            const { token } = await login(values)
+            const { token, permissions } = await login(values)
             setToken(token)
+            setPermissions(permissions)
             setName(values.username)
             uesSuccessMsg('登陆成功')
             navigate(MenuEnum.BASE_HOME)
@@ -78,4 +79,9 @@ const LoginForm: React.FC = (props: any) => {
     )
 }
 
-export default connect((state: any) => state.user, { setToken, setName, clearInfo })(LoginForm)
+export default connect((state: any) => state.user, {
+    setToken,
+    setName,
+    setPermissions,
+    clearInfo
+})(LoginForm)

@@ -12,6 +12,12 @@ export const setName = (name: string) => ({
     name
 })
 
+// * setPermissions
+export const setPermissions = (permissions: string[]) => ({
+    type: types.SET_PERMISSIONS,
+    permissions
+})
+
 // * clearInfo
 export const clearInfo = () => ({
     type: types.CLEAR_INFO

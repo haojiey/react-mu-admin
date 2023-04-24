@@ -64,7 +64,7 @@ export default [
                             path: 'btnAuth',
                             element: 'ButtonAuth/index',
                             meta: {
-                                title: '按钮缺陷'
+                                title: '按钮权限'
                             }
                         }
                     ]

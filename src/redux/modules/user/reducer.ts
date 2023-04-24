@@ -7,7 +7,8 @@ import { UserInfoState } from '/@/redux/interface'
 const userState: UserInfoState = {
     name: '',
     auth: '',
-    token: ''
+    token: '',
+    permissions: []
 }
 
 // user reducer
@@ -19,6 +20,9 @@ const user = (state: UserInfoState = userState, action: AnyAction) =>
                 break
             case types.SET_NAME:
                 draftState.name = action.name
+                break
+            case types.SET_PERMISSIONS:
+                draftState.permissions = action.permissions
                 break
             case types.CLEAR_INFO:
                 draftState.name = ''

@@ -10,6 +10,7 @@ export default [
                 }
             }
             const params = {
+                permissions: ['system:btn:add', 'system:btn:edit', 'system:btn:remove'],
                 token: 'hfejahfjeafe6612gjuiouio37812gjhg3213'
             }
             return {
