@@ -218,11 +218,18 @@ export default [
                             children: [
                                 {
                                     icon: 'AppstoreOutlined',
-                                    path: 'test',
-                                    element: 'tables/index',
+                                    path: 'routine',
+                                    element: 'tables/routine/index',
                                     meta: {
-                                        title: '测试',
-                                        auth: true
+                                        title: '复杂表格'
+                                    }
+                                },
+                                {
+                                    icon: 'AppstoreOutlined',
+                                    path: 'condition',
+                                    element: 'tables/condition/index',
+                                    meta: {
+                                        title: '常规表格'
                                     }
                                 }
                             ]
