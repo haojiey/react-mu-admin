@@ -22,118 +22,11 @@ export default [
                     children: [
                         {
                             icon: 'FileTextOutlined',
-                            path: 'users',
-                            element: 'users/index',
-                            meta: {
-                                title: '个人信息'
-                            }
-                        }
-                    ]
-                },
-                {
-                    element: 'Layout',
-                    children: [
-                        {
-                            icon: 'FileTextOutlined',
                             path: 'btnAuth',
                             element: 'ButtonAuth/index',
                             meta: {
                                 title: '按钮权限'
                             }
-                        }
-                    ]
-                },
-                {
-                    element: 'Layout',
-                    children: [
-                        {
-                            icon: 'FileTextOutlined',
-                            path: 'error',
-                            meta: {
-                                title: '错误页面'
-                            },
-                            children: [
-                                {
-                                    icon: 'AppstoreOutlined',
-                                    path: '403',
-                                    element: 'error/403/index',
-                                    meta: {
-                                        title: '403页面'
-                                    }
-                                },
-                                {
-                                    icon: 'AppstoreOutlined',
-                                    path: '404',
-                                    element: 'error/404/index',
-                                    meta: {
-                                        title: '404页面'
-                                    }
-                                }
-                            ]
-                        }
-                    ]
-                },
-
-                {
-                    element: 'Layout',
-                    children: [
-                        {
-                            icon: 'FileTextOutlined',
-                            path: 'function',
-                            meta: {
-                                title: '常用功能'
-                            },
-                            children: [
-                                {
-                                    icon: 'AppstoreOutlined',
-                                    path: 'download',
-                                    element: 'function/download/index',
-                                    meta: {
-                                        auth: true,
-                                        title: '下载文件'
-                                    }
-                                }
-                            ]
-                        }
-                    ]
-                },
-
-                {
-                    element: 'Layout',
-                    children: [
-                        {
-                            icon: 'FileTextOutlined',
-                            path: 'components',
-                            meta: {
-                                title: '常用组件',
-                                auth: true
-                            },
-                            children: [
-                                {
-                                    icon: 'AppstoreOutlined',
-                                    path: 'icon',
-                                    element: 'components/icon/index',
-                                    meta: {
-                                        title: 'ICON 图标'
-                                    }
-                                },
-                                {
-                                    icon: 'AppstoreOutlined',
-                                    path: 'modal',
-                                    element: 'components/modal/index',
-                                    meta: {
-                                        title: '弹窗'
-                                    }
-                                },
-                                {
-                                    icon: 'AppstoreOutlined',
-                                    path: 'upload',
-                                    element: 'components/upload/index',
-                                    meta: {
-                                        title: '上传文件'
-                                    }
-                                }
-                            ]
                         }
                     ]
                 },
@@ -214,6 +107,84 @@ export default [
                     element: 'Layout',
                     children: [
                         {
+                            icon: 'FileTextOutlined',
+                            path: 'function',
+                            meta: {
+                                title: '常用功能'
+                            },
+                            children: [
+                                {
+                                    icon: 'AppstoreOutlined',
+                                    path: 'download',
+                                    element: 'function/download/index',
+                                    meta: {
+                                        title: '下载文件'
+                                    }
+                                },
+                                {
+                                    icon: 'AppstoreOutlined',
+                                    path: 'notify',
+                                    element: 'function/notify/index',
+                                    meta: {
+                                        title: '消息提示'
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+
+                {
+                    element: 'Layout',
+                    children: [
+                        {
+                            icon: 'FileTextOutlined',
+                            path: 'components',
+                            meta: {
+                                title: '常用组件',
+                                auth: true
+                            },
+                            children: [
+                                {
+                                    icon: 'AppstoreOutlined',
+                                    path: 'icon',
+                                    element: 'components/icon/index',
+                                    meta: {
+                                        title: 'ICON 图标'
+                                    }
+                                },
+                                {
+                                    icon: 'AppstoreOutlined',
+                                    path: 'water',
+                                    element: 'components/water/index',
+                                    meta: {
+                                        title: '水印'
+                                    }
+                                },
+                                {
+                                    icon: 'AppstoreOutlined',
+                                    path: 'modal',
+                                    element: 'components/modal/index',
+                                    meta: {
+                                        title: '弹窗'
+                                    }
+                                },
+                                {
+                                    icon: 'AppstoreOutlined',
+                                    path: 'upload',
+                                    element: 'components/upload/index',
+                                    meta: {
+                                        title: '上传文件'
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    element: 'Layout',
+                    children: [
+                        {
                             icon: 'PieChartOutlined',
                             path: 'system',
                             meta: {
@@ -253,6 +224,49 @@ export default [
                     ]
                 },
 
+                {
+                    element: 'Layout',
+                    children: [
+                        {
+                            icon: 'FileTextOutlined',
+                            path: 'error',
+                            meta: {
+                                title: '错误页面'
+                            },
+                            children: [
+                                {
+                                    icon: 'AppstoreOutlined',
+                                    path: '403',
+                                    element: 'error/403/index',
+                                    meta: {
+                                        title: '403页面'
+                                    }
+                                },
+                                {
+                                    icon: 'AppstoreOutlined',
+                                    path: '404',
+                                    element: 'error/404/index',
+                                    meta: {
+                                        title: '404页面'
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    element: 'Layout',
+                    children: [
+                        {
+                            icon: 'FileTextOutlined',
+                            path: 'users',
+                            element: 'users/index',
+                            meta: {
+                                title: '个人信息'
+                            }
+                        }
+                    ]
+                },
                 {
                     element: 'Layout',
                     children: [

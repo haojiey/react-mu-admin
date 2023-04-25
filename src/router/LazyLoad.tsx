@@ -10,9 +10,9 @@ const lazyLoad = (Comp: React.LazyExoticComponent<any>): React.ReactNode => (
                 indicator={antIcon}
                 tip="Loading"
                 style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
+                    position: 'absolute',
+                    left: '50%',
+                    top: '50%',
                     height: '100%'
                 }}
             />
