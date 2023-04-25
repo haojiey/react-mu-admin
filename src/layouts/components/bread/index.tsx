@@ -16,10 +16,11 @@ const Bread: React.FC = (props: any) => {
     const { pathname } = useLocation()
     const { menuList } = props
     const [breads, setBreads] = useState<BreadItem[]>([])
+    const list = menuList.map((item) => item.children[0])
 
-    const menus = formatFlatTree(menuList, {
+    const menus = formatFlatTree(list, {
         children: 'children',
-        title: 'title',
+        title: 'meta',
         id: 'path'
     })
 
@@ -36,7 +37,7 @@ const Bread: React.FC = (props: any) => {
             let menu = menus.find((item) => item.key == pt)
             if (menu) {
                 breadList.unshift({
-                    title: menu.title,
+                    title: menu.title.title,
                     path: menu.key
                 })
                 pt = menu.pid
