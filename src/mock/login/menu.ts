@@ -22,32 +22,6 @@ export default [
                     children: [
                         {
                             icon: 'FileTextOutlined',
-                            path: 'guide',
-                            element: 'guide/index',
-                            meta: {
-                                title: '引导页'
-                            }
-                        }
-                    ]
-                },
-                {
-                    element: 'Layout',
-                    children: [
-                        {
-                            icon: 'FileTextOutlined',
-                            path: 'echarts',
-                            element: 'echarts/index',
-                            meta: {
-                                title: '图表页'
-                            }
-                        }
-                    ]
-                },
-                {
-                    element: 'Layout',
-                    children: [
-                        {
-                            icon: 'FileTextOutlined',
                             path: 'users',
                             element: 'users/index',
                             meta: {
