@@ -1,4 +1,4 @@
-import { Tag } from 'antd'
+import { Button, Popconfirm, Tag } from 'antd'
 export const queryAccountConfig = [
     {
         label: '用户名',
@@ -51,6 +51,13 @@ export const AccountColumns = [
     {
         title: '创建时间',
         dataIndex: 'time'
+    },
+    {
+        title: '操作',
+        key: 'operation',
+        align: 'center',
+        width: 150,
+        render: () => <Button type="link">编辑</Button>
     }
 ]
 
@@ -113,5 +120,83 @@ export const NotifyColumns = [
     {
         title: '发布时间',
         dataIndex: 'time'
+    }
+]
+
+export const MenuColumns = (fn: Function) => [
+    {
+        title: '菜单名称',
+        dataIndex: 'meta',
+        render: (record: any) => <span>{record?.title || ''}</span>
+    },
+    {
+        title: '图标',
+        dataIndex: 'icon',
+        render: (text: string) => <i className={`iconfont ${text} !text-[18px] font-black`} />
+    },
+    {
+        title: '路由',
+        dataIndex: 'path'
+    },
+    {
+        title: '操作',
+        key: 'operation',
+        align: 'center',
+        width: 150,
+        render: () => (
+            <div>
+                <Button type="link" size="small" onClick={() => fn(true, '新增菜单')}>
+                    新增
+                </Button>
+                <Button type="link" size="small" onClick={() => fn(true, '编辑菜单')}>
+                    编辑
+                </Button>
+                <Popconfirm
+                    placement="topRight"
+                    title={'Are you sure to delete this task?'}
+                    onConfirm={() => {}}
+                    okText="Yes"
+                    cancelText="No"
+                >
+                    <Button type="link" size="small" danger>
+                        删除
+                    </Button>
+                </Popconfirm>
+            </div>
+        )
+    }
+]
+export const MenuBtnColumns = (fn: Function) => [
+    {
+        title: '权限名称',
+        dataIndex: 'name'
+    },
+    {
+        title: '权限标识',
+        dataIndex: 'key'
+    },
+    {
+        title: '操作',
+        key: 'operation',
+        align: 'center',
+        width: 150,
+        render: () => (
+            <div>
+                <Button type="link" size="small" onClick={() => fn(true, '编辑权限配置')}>
+                    编辑
+                </Button>
+                <Popconfirm
+                    placement="topRight"
+                    title={'Are you sure to delete this task?'}
+                    onConfirm={() => {}}
+                    okText="Yes"
+                    cancelText="No"
+                >
+                    <Button type="link" size="small" danger>
+                        删除
+                    </Button>
+                </Popconfirm>
+            </div>
+        )
     }
 ]

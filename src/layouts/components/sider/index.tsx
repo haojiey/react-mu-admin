@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 import { useLocation, useNavigate } from 'react-router-dom'
-import * as Icons from '@ant-design/icons'
 import type { MenuProps } from 'antd'
 import { Menu } from 'antd'
 
@@ -28,8 +27,7 @@ function getItem(
 }
 
 // 动态渲染 Icon 图标
-const customIcons: { [key: string]: any } = Icons
-const addIcon = (name: string) => React.createElement(customIcons[name])
+const addIcon = (name: string) => <i className={`iconfont ${name} !text-[16px] font-black`} />
 
 // 处理菜单的格式
 const deepLoopFloat = (menuList: MenuType.MenuOptions[], newArr: MenuItem[] = [], path = '') => {

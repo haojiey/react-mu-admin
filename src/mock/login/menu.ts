@@ -8,7 +8,7 @@ export default [
                     element: 'Layout',
                     children: [
                         {
-                            icon: 'HomeOutlined',
+                            icon: 'icon-all',
                             path: 'home',
                             element: 'home/index',
                             meta: {
@@ -21,7 +21,7 @@ export default [
                     element: 'Layout',
                     children: [
                         {
-                            icon: 'FileTextOutlined',
+                            icon: 'icon-clock',
                             path: 'btnAuth',
                             element: 'ButtonAuth/index',
                             meta: {
@@ -34,7 +34,7 @@ export default [
                     element: 'Layout',
                     children: [
                         {
-                            icon: 'FileTextOutlined',
+                            icon: 'icon-form',
                             path: 'forms',
                             meta: {
                                 title: '表单案例',
@@ -42,7 +42,7 @@ export default [
                             },
                             children: [
                                 {
-                                    icon: 'AppstoreOutlined',
+                                    icon: 'icon-form',
                                     path: 'normal',
                                     element: 'forms/normal/index',
                                     meta: {
@@ -51,7 +51,7 @@ export default [
                                     }
                                 },
                                 {
-                                    icon: 'AppstoreOutlined',
+                                    icon: 'icon-form',
                                     path: 'check',
                                     element: 'forms/check/index',
                                     meta: {
@@ -60,7 +60,7 @@ export default [
                                     }
                                 },
                                 {
-                                    icon: 'AppstoreOutlined',
+                                    icon: 'icon-form',
                                     path: 'query',
                                     element: 'forms/query/index',
                                     meta: {
@@ -76,7 +76,7 @@ export default [
                     element: 'Layout',
                     children: [
                         {
-                            icon: 'FileTextOutlined',
+                            icon: 'icon-calendar',
                             path: 'tables',
                             meta: {
                                 title: '表格案例',
@@ -84,7 +84,7 @@ export default [
                             },
                             children: [
                                 {
-                                    icon: 'AppstoreOutlined',
+                                    icon: 'icon-calendar',
                                     path: 'routine',
                                     element: 'tables/routine/index',
                                     meta: {
@@ -92,7 +92,7 @@ export default [
                                     }
                                 },
                                 {
-                                    icon: 'AppstoreOutlined',
+                                    icon: 'icon-calendar',
                                     path: 'condition',
                                     element: 'tables/condition/index',
                                     meta: {
@@ -107,14 +107,14 @@ export default [
                     element: 'Layout',
                     children: [
                         {
-                            icon: 'FileTextOutlined',
+                            icon: 'icon-edit',
                             path: 'function',
                             meta: {
                                 title: '常用功能'
                             },
                             children: [
                                 {
-                                    icon: 'AppstoreOutlined',
+                                    icon: 'icon-edit',
                                     path: 'download',
                                     element: 'function/download/index',
                                     meta: {
@@ -122,7 +122,7 @@ export default [
                                     }
                                 },
                                 {
-                                    icon: 'AppstoreOutlined',
+                                    icon: 'icon-edit',
                                     path: 'notify',
                                     element: 'function/notify/index',
                                     meta: {
@@ -138,7 +138,7 @@ export default [
                     element: 'Layout',
                     children: [
                         {
-                            icon: 'FileTextOutlined',
+                            icon: 'icon-viewgallery',
                             path: 'components',
                             meta: {
                                 title: '常用组件',
@@ -146,7 +146,7 @@ export default [
                             },
                             children: [
                                 {
-                                    icon: 'AppstoreOutlined',
+                                    icon: 'icon-viewgallery',
                                     path: 'icon',
                                     element: 'components/icon/index',
                                     meta: {
@@ -154,7 +154,7 @@ export default [
                                     }
                                 },
                                 {
-                                    icon: 'AppstoreOutlined',
+                                    icon: 'icon-viewgallery',
                                     path: 'water',
                                     element: 'components/water/index',
                                     meta: {
@@ -162,7 +162,7 @@ export default [
                                     }
                                 },
                                 {
-                                    icon: 'AppstoreOutlined',
+                                    icon: 'icon-viewgallery',
                                     path: 'modal',
                                     element: 'components/modal/index',
                                     meta: {
@@ -170,7 +170,7 @@ export default [
                                     }
                                 },
                                 {
-                                    icon: 'AppstoreOutlined',
+                                    icon: 'icon-viewgallery',
                                     path: 'upload',
                                     element: 'components/upload/index',
                                     meta: {
@@ -185,7 +185,7 @@ export default [
                     element: 'Layout',
                     children: [
                         {
-                            icon: 'PieChartOutlined',
+                            icon: 'icon-set',
                             path: 'system',
                             meta: {
                                 title: '系统管理',
@@ -193,7 +193,7 @@ export default [
                             },
                             children: [
                                 {
-                                    icon: 'AppstoreOutlined',
+                                    icon: 'icon-set',
                                     path: 'account',
                                     element: 'system/account/index',
                                     meta: {
@@ -202,7 +202,7 @@ export default [
                                     }
                                 },
                                 {
-                                    icon: 'AppstoreOutlined',
+                                    icon: 'icon-set',
                                     path: 'notify',
                                     element: 'system/notify/index',
                                     meta: {
@@ -211,7 +211,7 @@ export default [
                                     }
                                 },
                                 {
-                                    icon: 'ProfileOutlined',
+                                    icon: 'icon-set',
                                     path: 'menu',
                                     element: 'system/menu/index',
                                     meta: {
@@ -228,14 +228,14 @@ export default [
                     element: 'Layout',
                     children: [
                         {
-                            icon: 'FileTextOutlined',
+                            icon: 'icon-cry',
                             path: 'error',
                             meta: {
                                 title: '错误页面'
                             },
                             children: [
                                 {
-                                    icon: 'AppstoreOutlined',
+                                    icon: 'icon-cry',
                                     path: '403',
                                     element: 'error/403/index',
                                     meta: {
@@ -243,7 +243,7 @@ export default [
                                     }
                                 },
                                 {
-                                    icon: 'AppstoreOutlined',
+                                    icon: 'icon-cry',
                                     path: '404',
                                     element: 'error/404/index',
                                     meta: {
@@ -258,7 +258,7 @@ export default [
                     element: 'Layout',
                     children: [
                         {
-                            icon: 'FileTextOutlined',
+                            icon: 'icon-account',
                             path: 'users',
                             element: 'users/index',
                             meta: {
@@ -271,7 +271,7 @@ export default [
                     element: 'Layout',
                     children: [
                         {
-                            icon: 'FileTextOutlined',
+                            icon: 'icon-category',
                             path: 'about',
                             element: 'about/index',
                             meta: {

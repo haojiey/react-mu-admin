@@ -6,3 +6,11 @@ export function getMenuList() {
         method: 'get'
     })
 }
+
+export function getMenuBtnAuthList(params) {
+    return defaultRequest.request({
+        url: '/menu/btnAuthList',
+        method: 'post',
+        data: params
+    })
+}

@@ -1,8 +1,8 @@
 @font-face {
   font-family: "iconfont"; /* Project id 4015400 */
-  src: url('iconfont.woff2?t=1681443818027') format('woff2'),
-       url('iconfont.woff?t=1681443818027') format('woff'),
-       url('iconfont.ttf?t=1681443818027') format('truetype');
+  src: url('iconfont.woff2?t=1682489692224') format('woff2'),
+       url('iconfont.woff?t=1682489692224') format('woff'),
+       url('iconfont.ttf?t=1682489692224') format('truetype');
 }
 
 .iconfont {
@@ -11,6 +11,54 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-cart:before {
+  content: "\e698";
+}
+
+.icon-category:before {
+  content: "\e699";
+}
+
+.icon-form:before {
+  content: "\e6a2";
+}
+
+.icon-pic:before {
+  content: "\e6a8";
+}
+
+.icon-qrcode:before {
+  content: "\e6a9";
+}
+
+.icon-viewgallery:before {
+  content: "\e6b4";
+}
+
+.icon-account:before {
+  content: "\e6b8";
+}
+
+.icon-clock:before {
+  content: "\e6bb";
+}
+
+.icon-calendar:before {
+  content: "\e6bf";
+}
+
+.icon-text:before {
+  content: "\e6fc";
+}
+
+.icon-icondownload:before {
+  content: "\e714";
+}
+
+.icon-rejectedorder:before {
+  content: "\e724";
 }
 
 .icon-all:before {
