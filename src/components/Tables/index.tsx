@@ -13,7 +13,6 @@ const Tables = (props: TablesProps) => {
         size: 'middle',
         ...props
     }
-    const [data] = useState(dataSource || [])
     const [colu, setColu] = useState(columns || [])
 
     const setHideColumns = (values: any) => {
@@ -34,7 +33,7 @@ const Tables = (props: TablesProps) => {
                 headerContent={props.headerContent || null}
             />
             <ConfigProvider renderEmpty={Empty as any}>
-                <Table {...propsState} dataSource={data} columns={colu} />
+                <Table {...propsState} dataSource={dataSource} columns={colu} />
             </ConfigProvider>
         </div>
     )

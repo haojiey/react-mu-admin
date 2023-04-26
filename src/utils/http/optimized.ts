@@ -24,7 +24,7 @@ export function OptimizedData(config: RequestConfig) {
             config.params = undefined
         }
     } else {
-        const params = filterNullParams(data)
+        const params = filterNullParams(data || [])
         if (!isString(params)) {
             config.data = params
             config.params = undefined
