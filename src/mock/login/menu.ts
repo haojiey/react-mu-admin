@@ -258,19 +258,6 @@ export default [
                     element: 'Layout',
                     children: [
                         {
-                            icon: 'icon-account',
-                            path: 'users',
-                            element: 'users/index',
-                            meta: {
-                                title: '个人信息'
-                            }
-                        }
-                    ]
-                },
-                {
-                    element: 'Layout',
-                    children: [
-                        {
                             icon: 'icon-category',
                             path: 'about',
                             element: 'about/index',

@@ -35,13 +35,13 @@ const AvatarIcon = ({ clearInfo }: any) => {
 
     // Dropdown Menu
     const items: MenuProps['items'] = [
-        {
-            key: '1',
-            label: '个人信息'
-        },
-        {
-            type: 'divider'
-        },
+        // {
+        //     key: '1',
+        //     label: '个人信息'
+        // },
+        // {
+        //     type: 'divider'
+        // },
         {
             key: '2',
             label: '退出系统'
