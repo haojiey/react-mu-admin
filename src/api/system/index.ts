@@ -6,3 +6,10 @@ export function getSystemUsers() {
         method: 'post'
     })
 }
+
+export function getSystemNotifys() {
+    return defaultRequest.request({
+        url: '/system/notifys',
+        method: 'post'
+    })
+}
