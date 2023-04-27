@@ -10,7 +10,10 @@ const Index: React.FC = () => {
             trigger: 'axis'
         },
         legend: {
-            data: ['Vip', 'Download', 'Information', 'Invoice']
+            data: ['Vip', 'Download', 'Information', 'Invoice'],
+            textStyle: {
+                color: '@text-color-secondary'
+            }
         },
         grid: {
             left: '3%',

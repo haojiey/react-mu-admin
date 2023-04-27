@@ -3,5 +3,6 @@
 /public/*
 /src/assets/aliFont/*
 /src/design/theme/*
+node_modules
 *.tsx
 index.html

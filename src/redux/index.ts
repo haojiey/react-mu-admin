@@ -4,13 +4,15 @@ import storage from 'redux-persist/lib/storage'
 import reduxThunk from 'redux-thunk'
 
 import menu from './modules/menu/reducer'
+import theme from './modules/theme/reducer'
 import user from './modules/user/reducer'
 import { PERSIT_CONFIG_MU } from './constant'
 
 // Reducer function resolution
 const reducer = combineReducers({
     menu,
-    user
+    user,
+    theme
 })
 
 // persitConfig configuration information

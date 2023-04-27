@@ -19,7 +19,6 @@ export function vitePlugins(config: PluginConf) {
             less: {
                 // Enable Dynamic theme mode.
                 arbitraryMode: false,
-                // Default theme color，It is usually the same as a theme color (@primary-color) in src/theme/theme-vars.less .
                 // Only one item of multipleScopeVars
                 multipleScopeVars: [
                     {

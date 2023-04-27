@@ -8,78 +8,17 @@
 @error-color: #f5222d; // 错误色
 @font-size-base: 14px; // 主字号
 @heading-color: rgba(0, 0, 0, 0.85); // 标题色
-@text-color: rgba(0, 0, 0, 0.65); // 主文本色
-@text-color-secondary: rgba(0, 0, 0, 0.45); // 次文本色
+@text-color: rgba(0, 0, 0, 1); // 主文本色
+@text-color-secondary: rgba(0, 0, 0, 0.65); // 次文本色
 @disabled-color: rgba(0, 0, 0, 0.25); // 失效色
 @border-radius-base: 2px; // 组件/浮层圆角
-@border-color-base: #d9d9d9; // 边框色
+@border-color-base: #eee; // 边框色
 @box-shadow-base: 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 6px 16px 0 rgba(0, 0, 0, 0.08),
     0 9px 28px 8px rgba(0, 0, 0, 0.05); // 浮层阴影
-
-body {
-    background: #f2f7ff;
-}
-
-.ant-menu:not(.ant-menu-horizontal) {
-    .ant-menu-item-selected {
-        background: #eee;
-        color: @def-avt-text-color;
-        font-weight: @weight500;
-        padding: 0 16px;
-        border-radius: 8px;
-    }
-}
-
-.ant-menu-item {
-    color: @def-avt-text-color;
-    font-weight: @weight-normal;
-    font-size: 14px;
-}
-
-.ant-menu-submenu-selected {
-    color: @def-avt-text-color;
-    font-weight: @weight500;
-}
-
-.ant-menu-item:hover:hover {
-    background: #eee;
-    color: @def-avt-text-color;
-    padding: 0 16px;
-    border-radius: 8px;
-}
-
-.ant-menu-submenu-active,
-.ant-menu-submenu-title:hover {
-    color: @def-avt-text-color !important;
-    font-weight: @weight500;
-    background: transparent !important;
-}
-
-.ant-menu-submenu-arrow {
-    color: #8d9299 !important;
-}
-
-.ant-menu-submenu-popup {
-    .ant-menu {
-        background: #fff !important;
-        padding: 0 20px !important;
-    }
-}
-.ant-layout-content {
-    background: #f2f7ff;
-}
-.ant-layout-sider-collapsed {
-    .ant-menu:not(.ant-menu-horizontal) {
-        .ant-menu-item-selected {
-            padding: 0 11.5px;
-        }
-    }
-
-    .ant-menu-item:hover {
-        padding: 0 11.5px;
-    }
-
-    .ant-menu-submenu-selected {
-        color: @def-avt-text-color;
-    }
-}
+@card-bg: #fff;
+@bg: #f2f7ff;
+@menu-bg-selected: #eee;
+@input-bg: @card-bg;
+@table-header-bg: #fafafa;
+@table-border-color: rgba(0, 0, 0, 0.06);
+@mask-bg: transparent;

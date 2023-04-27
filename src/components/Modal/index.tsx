@@ -3,6 +3,8 @@ import { Button, Modal } from 'antd'
 
 import { ModalProps } from './types'
 
+import './index.less'
+
 const Index: React.FC<ModalProps> = ({
     isModalOpen,
     width = 520,
@@ -37,7 +39,13 @@ const Index: React.FC<ModalProps> = ({
 
     return (
         <>
-            <Modal title={title} width={width} open={isModalOpen} footer={footerNode()}>
+            <Modal
+                title={title}
+                width={width}
+                onCancel={handleCancel}
+                open={isModalOpen}
+                footer={footerNode()}
+            >
                 {children}
             </Modal>
         </>

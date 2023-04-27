@@ -12,3 +12,7 @@ export interface UserInfoState {
     token: string
     permissions: string[]
 }
+
+export interface ThemeState {
+    def: string
+}

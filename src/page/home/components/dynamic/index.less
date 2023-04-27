@@ -4,8 +4,18 @@
     padding: 20px;
     margin-top: 30px;
     overflow-y: scroll;
-    background: #fff;
+    background: @card-bg;
     border-radius: 10px;
     box-shadow: 4px 4px 40px rgb(0 0 0 / 5%);
     border-color: rgb(0 0 0 / 5%);
+
+    .ant-list-item {
+        a {
+            color: @text-color-secondary;
+        }
+    }
+
+    .ant-list-item-meta-description {
+        color: @text-color-secondary;
+    }
 }

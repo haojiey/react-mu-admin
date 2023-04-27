@@ -7,7 +7,10 @@ import Charts from '/@/components/Charts'
 const Index: React.FC = () => {
     const option = {
         legend: {
-            data: ['Allocated Budget', 'Actual Spending']
+            data: ['Allocated Budget', 'Actual Spending'],
+            textStyle: {
+                color: '@text-color-secondary'
+            }
         },
         radar: {
             // shape: 'circle',

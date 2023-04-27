@@ -4,8 +4,8 @@
     justify-content: space-between;
     height: 58px;
     padding: 0 20px 0 3px;
-    background: #fff;
-    border-bottom: 1px solid #f6f6f6;
+    background: @card-bg;
+    border-bottom: 1px solid @border-color-base;
 
     .header-lf {
         .logo {
@@ -22,13 +22,14 @@
                 margin: 0;
                 font-size: 24px;
                 font-weight: bold;
-                color: #000;
+                color: @text-color;
                 white-space: nowrap;
             }
         }
 
         .collapsed {
             font-size: 20px;
+            color: @text-color;
             cursor: pointer;
             transition: color 0.3s;
         }
@@ -36,5 +37,10 @@
 
     .header-ri {
         padding-right: 12px;
+        color: @text-color;
+    }
+
+    .iconfont {
+        color: @text-color;
     }
 }

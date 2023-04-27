@@ -7,7 +7,10 @@ import Charts from '/@/components/Charts'
 const Index: React.FC = () => {
     const option = {
         legend: {
-            top: 'top'
+            top: 'top',
+            textStyle: {
+                color: '@text-color-secondary'
+            }
         },
         series: [
             {

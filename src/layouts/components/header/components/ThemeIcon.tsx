@@ -1,10 +1,14 @@
+import { connect } from 'react-redux'
 import { toggleTheme } from '@zougt/vite-plugin-theme-preprocessor/dist/browser-utils'
 
-const ThemeIcon = () => {
+import { setTheme } from '/@/redux/modules/theme/action'
+const ThemeIcon = ({ def, setTheme }: any) => {
     function changeTheme() {
+        const theme = def == 'theme-default' ? 'theme-dark' : 'theme-default'
         toggleTheme({
-            scopeName: 'theme-dark'
+            scopeName: theme
         })
+        setTheme(theme)
     }
 
     return (
@@ -13,4 +17,6 @@ const ThemeIcon = () => {
         </div>
     )
 }
-export default ThemeIcon
+export default connect((state: any) => state.theme, {
+    setTheme
+})(ThemeIcon)

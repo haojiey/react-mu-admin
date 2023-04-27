@@ -1,6 +1,8 @@
 import React from 'react'
 import { Card, Descriptions } from 'antd'
 
+import './index.less'
+
 const gridStyle: React.CSSProperties = {
     width: '25%',
     textAlign: 'center'

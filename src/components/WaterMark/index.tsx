@@ -22,7 +22,7 @@ const Index = (
                 <text
                     x="-160"
                     y="-30"
-                    fill={props.fillColor || '#333'}
+                    fill={props.fillColor || '@text-color-secondary'}
                     transform="rotate(-35 220 -220)"
                     fillOpacity={props.fillOpacity || '0.1'}
                     fontSize={`${props.fontSize || '28'}px`}

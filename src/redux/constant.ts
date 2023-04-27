@@ -5,7 +5,10 @@ export const SET_MENU_LIST = 'SET_MENU_LIST'
 // 设置 token
 export const SET_TOKEN = 'SET_TOKEN'
 // 设置 name
-export const SET_NAME = 'SET_SET_NAME'
+export const SET_NAME = 'SET_NAME'
+
+// 设置 theme
+export const SET_THEME = 'SET_THEME'
 
 // 设置 permissions
 export const SET_PERMISSIONS = 'SET_PERMISSIONS'
