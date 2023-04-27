@@ -49,10 +49,29 @@ const deepLoopFloat = (menuList: MenuType.MenuOptions[], newArr: MenuItem[] = []
     return newArr
 }
 
+const getOpenKeys = (keys: string | undefined): string[] => {
+    if (!keys) {
+        return []
+    }
+    const paths = keys.split('/')
+    paths.shift()
+    const openKeys = paths.map((item, index) => {
+        let key = ''
+        if (index == 0) {
+            key = '/' + item
+        } else {
+            key = paths[index - 1] + '/' + item
+        }
+        paths[index] = key
+        return key
+    })
+    return openKeys
+}
+
 const Sider: React.FC = (props: any) => {
     const { menuList: menus } = props
-    const [openKeys, setOpenKeys] = useState([])
     const { pathname } = useLocation()
+    const [openKeys, setOpenKeys] = useState(getOpenKeys(pathname))
     const [defSelectKeys] = useState([pathname])
     const [menuList, setMenuList] = useState<MenuItem[]>([])
 
@@ -71,7 +90,8 @@ const Sider: React.FC = (props: any) => {
 
     const onOpenChange: MenuProps['onOpenChange'] = (keys) => {
         const latestOpenKey = keys.find((key) => openKeys.indexOf(key) === -1)
-        setOpenKeys(latestOpenKey ? [latestOpenKey] : [])
+        const openkey: string[] = getOpenKeys(latestOpenKey)
+        setOpenKeys(openkey)
     }
 
     // 点击当前菜单跳转页面
