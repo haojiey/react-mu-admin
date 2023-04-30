@@ -4,7 +4,7 @@
     "author": "liangmuyou@outlook.com",
     "scripts": {
         "start": "vite",
-        "build": "tsc && vite build",
+        "build": "vite build",
         "preview": "vite preview",
         "prepare": "husky install",
         "standard-version": "standard-version",

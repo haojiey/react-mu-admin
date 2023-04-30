@@ -14,10 +14,11 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
     // The boolean type read by loadEnv is a string. This function can be converted to boolean type
     const env = loadEnv(mode, root)
 
+    const isBuild = command === 'build'
+
     const { VITE_PORT, VITE_PROXY, VITE_USE_MOCK, VITE_OPEN } = wrapperEnv(env)
 
     return {
-        plugins: vitePlugins({ VITE_USE_MOCK }),
         server: {
             port: VITE_PORT,
             host: '0.0.0.0',
@@ -28,6 +29,15 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
                 overlay: true
             }
         },
+        css: {
+            // user javascriptEnabled
+            preprocessorOptions: {
+                less: {
+                    javascriptEnabled: true
+                }
+            }
+        },
+        plugins: vitePlugins(VITE_USE_MOCK, isBuild),
         build: {
             outDir: OUT_DIR,
             terserOptions: {
@@ -42,14 +52,6 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
             // set alias
             alias: {
                 '/@/': resolve(__dirname, 'src') + '/'
-            }
-        },
-        css: {
-            // user javascriptEnabled
-            preprocessorOptions: {
-                less: {
-                    javascriptEnabled: true
-                }
             }
         }
     }

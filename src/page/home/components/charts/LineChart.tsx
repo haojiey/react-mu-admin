@@ -12,7 +12,7 @@ const Index: React.FC = () => {
         legend: {
             data: ['Vip', 'Download', 'Information', 'Invoice'],
             textStyle: {
-                color: '@text-color-secondary'
+                color: 'red'
             }
         },
         grid: {

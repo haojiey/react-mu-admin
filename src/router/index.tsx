@@ -33,6 +33,7 @@ const routers: RoutersProps[] = [
 ]
 
 function filterAsyncRouter(routes: RoutersProps[], routers: RoutersProps[]) {
+    const viteModule = import.meta.glob('/src/page/**')
     routes.map((route: RoutersProps, index: number) => {
         let Module: JSX.Element | any = ''
         const { meta } = route
@@ -42,8 +43,8 @@ function filterAsyncRouter(routes: RoutersProps[], routers: RoutersProps[]) {
                 element: <LayoutIndex />
             }
         } else {
-            const URL = `/@/page/${route.element}.tsx`
-            Module = LazyLoad(lazy(() => import(URL)))
+            const URL = `/src/page/${route.element}.tsx`
+            Module = LazyLoad(lazy(viteModule[URL]))
             const ele = meta?.auth ? <Auth>{Module}</Auth> : Module
             routers[index] = {
                 path: route.path,

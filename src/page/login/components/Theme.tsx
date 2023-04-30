@@ -8,17 +8,18 @@ const Sun = () => <i className="iconfont icon-sun"></i>
 
 const Moon = () => <i className="iconfont icon-moon"></i>
 
-const Index: React.FC = ({ def, setTheme }: any) => {
-    function changeTheme() {
-        const theme = def == 'theme-default' ? 'theme-dark' : 'theme-default'
+const Index: React.FC = ({ isDark, setTheme }: any) => {
+    function changeTheme(checked: boolean) {
+        const theme = checked ? 'theme-dark' : 'theme-default'
         toggleTheme({
             scopeName: theme
         })
-        setTheme(theme)
+        setTheme(checked)
     }
     useEffect(() => {
+        const theme = isDark ? 'theme-dark' : 'theme-default'
         toggleTheme({
-            scopeName: def
+            scopeName: theme
         })
     }, [])
     return (
@@ -27,7 +28,7 @@ const Index: React.FC = ({ def, setTheme }: any) => {
             onChange={changeTheme}
             checkedChildren={<Sun />}
             unCheckedChildren={<Moon />}
-            checked={def == 'theme-dark'}
+            defaultChecked={isDark}
         />
     )
 }

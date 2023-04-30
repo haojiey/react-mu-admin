@@ -15,15 +15,15 @@ import { Router, useLazy } from '/@/router/index'
 const antIcon = <LoadingOutlined style={{ fontSize: 24 }} spin />
 
 const App = (props: any) => {
-    const { getMenuListAction, name } = props
+    const { getMenuListAction, user } = props
     const [, setRoutes] = useState([])
     const [loading, setLoading] = useState(false)
 
     useEffect(() => {
-        if (location.hash != '#/login' && name) {
+        if (location.hash != '#/login' && user.name) {
             getMenu()
         }
-    }, [name])
+    }, [user.name])
 
     // 通过接口获取后台返回的路由
     const getMenu = async () => {
@@ -43,4 +43,4 @@ const App = (props: any) => {
         </Spin>
     )
 }
-export default connect((state: any) => state.user, { getMenuListAction })(App)
+export default connect((state: any) => state, { getMenuListAction })(App)

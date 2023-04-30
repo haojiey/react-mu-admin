@@ -14,5 +14,5 @@ export interface UserInfoState {
 }
 
 export interface ThemeState {
-    def: string
+    isDark: boolean
 }

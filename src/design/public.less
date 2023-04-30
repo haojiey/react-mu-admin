@@ -23,12 +23,24 @@
     border-radius: 6px !important;
 
     .anticon {
-        color: @text-color;
+        color: @text-color !important;
     }
 }
 
 .ant-btn {
     border-radius: 6px !important;
+}
+
+.ant-picker-input > input:focus,
+.theme-default .ant-picker-input > input-focused {
+    box-shadow: none !important;
+}
+
+.ant-input-password,
+.ant-input-affix-wrapper {
+    input {
+        border: none !important;
+    }
 }
 
 .ant-checkbox-inner,
@@ -68,8 +80,7 @@
 }
 
 .ant-dropdown-menu {
-    background-color: @card-bg;
-
+    background-color: @card-bg !important;
     .ant-dropdown-menu-item {
         color: @text-color;
     }
@@ -210,46 +221,26 @@ body {
     border-radius: 8px;
 }
 
-.ant-menu-submenu {
+.ant-descriptions-bordered .ant-descriptions-item-label,
+.ant-descriptions-item-content {
+    color: @text-color;
+    background-color: @card-bg;
+}
+
+.ant-descriptions-title {
     color: @text-color;
 }
 
-.ant-menu-submenu-selected {
-    font-weight: @weight500;
-    color: @primary-color;
-}
-
-.ant-menu-item:hover:hover {
-    padding: 0 16px;
-    color: @primary-color;
-    background: @menu-bg-selected;
-    border-radius: 8px;
-}
-
-.ant-menu-submenu-active,
-.ant-menu-submenu-title:hover {
-    font-weight: @weight500;
-    color: @primary-color !important;
-    background: transparent !important;
-}
-
-.ant-menu-submenu-arrow {
-    color: #8d9299 !important;
-}
-
-.ant-menu-submenu-popup {
-    .ant-menu {
-        padding: 0 20px !important;
-        background: @card-bg !important;
-    }
-}
-
 .ant-layout-content {
-    background: @bg;
+    background: @bg !important;
 }
 
 .ant-layout-sider {
-    background: @card-bg;
+    background: @card-bg !important;
+}
+
+.ant-btn-link {
+    border: none !important;
 }
 
 .ant-layout-sider-collapsed {
@@ -272,4 +263,20 @@ body {
 .ant-menu-vertical,
 .ant-menu-vertical-left {
     border-right: 1px solid @border-color-base;
+}
+
+div,
+main,
+ul {
+    /* 滚动条整体部分 */
+    &::-webkit-scrollbar {
+        width: 3px;
+    }
+
+    /* 滚动条里面的滑块 */
+    &::-webkit-scrollbar-thumb {
+        background-color: rgb(144 147 153 / 30%);
+        border-radius: 20px;
+        transition: background-color 0.3s;
+    }
 }
