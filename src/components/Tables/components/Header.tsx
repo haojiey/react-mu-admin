@@ -6,7 +6,7 @@ import Settings from './Settings'
 const Header = (props: any) =>
     props.headerContent && (
         <div className="flex items-center justify-between py-[16px]">
-            <div className="header-left flex items-center">{props.headerContent.content()}</div>
+            <div className="header-left flex">{props.headerContent.content()}</div>
             <div className="cursor-pointer">
                 {props.headerContent.isShowFilter && (
                     <Settings

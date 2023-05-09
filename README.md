@@ -1,33 +1,132 @@
+<div align="center">
+    <img alt="react-mu-admin" width="120" height="120" src="./public/vite.svg">
+	<p align="center">
+		<a href="https://react.docschina.org/" target="_blank">
+			<img src="https://img.shields.io/badge/react-^18.2.0-success" alt="react">
+		</a>
+		<a href="https://4x.ant.design/docs/react/introduce-cn" target="_blank">
+			<img src="https://img.shields.io/badge/antd-^4.24.8-blue" alt="antd">
+		</a>
+		<a href="https://www.tslang.cn/" target="_blank">
+	        <img src="https://img.shields.io/badge/typescript-^4.9.3-informational" alt="typescript">
+	    </a>
+		<a href="https://vitejs.dev/" target="_blank">
+		    <img src="https://img.shields.io/badge/vite-^4.2.0-success" alt="vite">
+		</a>
+		<a href="./LICENSE" target="_blank">
+		    <img src="https://img.shields.io/badge/license-MIT-red" alt="license">
+		</a>
+	</p>
+    <h1>React mu admin</h1>
+	<p>&nbsp;</p>
+</div>
+
+## ⚡ 简介
+
+React mu admin， 基于 `React18`,`TypeScript`,`vite4`,`antd4.x`等相关主流技术开发，一个免费开源的中后台管理系统开箱即用的前端解决方案，也可适用于学习`React`时进行参考或练手的项目。
+
+## 🌈 特性
+
+-   **主题切换**：普通、暗黑主题模式
+-   **Mock 数据**： 内置 Mock 数据方案
+-   **用户管理**：登录、登出演示、账号管理
+-   **权限管理**：路由权限（动态路由）、组件权限（按钮）
+-   **组件**： 二次封装常用组件（空状态、表格、表单、弹窗、上传文件、水印）等
+-   **错误页面**: 403、404 页面
+-   **多代理配置**：开发环境（development）配置多个本地代理
+-   **其他内置功能**：伸缩侧边栏、面包屑、全屏等
+
+## 📚 预览
+
+<!-- - [vue-vben-admin](https://vben.vvbin.cn/) - 完整版中文站点 -->
+
+<p align="center">
+    <img alt="MuAdmin Logo" width="100%" src="./src/assets/preview/preview1.png">
+    <img alt="MuAdmin Logo" width="100%" src="./src/assets/preview/preview2.png">
+    <img alt="MuAdmin Logo" width="100%" src="./src/assets/preview/preview3.png">
+    <img alt="MuAdmin Logo" width="100%" src="./src/assets/preview/preview4.png">
+</p>
+
+## ⭐ 仓库地址
+
+-   [https://github.com/haojiey/react-mu-admin](https://github.com/haojiey/react-mu-admin)：- GitHub 仓库，⭐ 欢迎 Star，感谢支持
+
+## 🔨 安装
+
+-   克隆项目
+
+```bash
+git clone https://github.com/haojiey/react-mu-admin.git
 ```
-react-mu-admin
-├─ .env.development     接口api配置
-├─ .env.production
-├─ .husky commit        规范校验
-├─ README.md
-├─ build        vite 配置文件
-├─ index.html
-├─ package.json
-├─ public
-├─ src
-│  ├─ App.tsx
-│  ├─ api           api存放位置
-│  ├─ assets        静态资源
-│  ├─ components    公用组件
-│  ├─ design        样式文件
-│  ├─ enum          枚举常量
-│  ├─ hooks         hooks 函数
-│  ├─ interface     公用interface
-│  ├─ layouts       页面布局
-│  ├─ main.tsx
-│  ├─ mock          mock 数据
-│  ├─ page          页面位置
-│  ├─ redux
-│  ├─ router
-│  ├─ utils
-│  └─ vite-env.d.ts
-├─ tailwind.config.ts
-├─ tsconfig.json
-├─ tsconfig.node.json
-├─ vite.config.ts
-└─ yarn.lock
+
+-   安装依赖
+
+```bash
+cd react-mu-admin
+
+cnpm install
+yarn install
+//安装失败，请升级 nodejs 到 16 以上
 ```
+
+-   运行项目
+
+```bash
+npm run start
+yarn start
+```
+
+-   打包项目
+
+```bash
+npm run build
+yarn build
+```
+
+## 🌈 线上接口
+
+本地采用 Mock 数据，线上采用 EasyMock：
+
+-   EasyMock：https://mock.mengxuegu.com/
+
+## 🔨 Git 提交规范
+
+-   `feat` 增加新的功能
+-   `fix` 修复 BUG
+-   `perf` 优化功能
+-   `style` 代码风格调整不影响运行结果的
+-   `refactor` 重构代码
+-   `revert` 撤销修改
+-   `test` 测试相关
+-   `docs` 文档和注释相关
+-   `chore` 依赖更新/脚手架配置修改等
+-   `workflow` 工作流改进
+-   `ci` 持续集成
+-   `types` 类型定义文件更改
+-   `wip` 开发中
+
+## 📑 浏览器支持
+
+| ![Edge](https://i.imgtg.com/2023/04/11/8zr3p.png) | ![Firefox](https://i.imgtg.com/2023/04/11/8zKiU.png) | ![Chrome](https://i.imgtg.com/2023/04/11/8zNrx.png) | ![Safari](https://i.imgtg.com/2023/04/11/8zeGj.png) |
+| :-: | :-: | :-: | :-: |
+| last 2 versions | last 2 versions | last 2 versions | last 2 versions |
+
+## 🍵 捐赠
+
+如果你觉得这个项目对你有帮助，欢迎点一个 star 或者帮作者买一杯咖啡表示支持，让作者继续筹资维护线上环境的运行
+
+|                          微信                          |
+| :----------------------------------------------------: |
+| <img src="./src/assets/preview/wechat1.png" width=170> |
+
+## 💯 交流
+
+帮助开发者更方便地进行系统的了解，以及同伴们之间的互相交流学习
+
+|                      微信二维码                       |
+| :---------------------------------------------------: |
+| <img src="./src/assets/preview/wechat.png" width=170> |
+
+## License
+
+[MIT License Copyright (c) 2023 梁木由](./LICENSE)

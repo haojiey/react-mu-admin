@@ -12,8 +12,7 @@ const lazyLoad = (Comp: React.LazyExoticComponent<any>): React.ReactNode => (
                 style={{
                     position: 'absolute',
                     left: '50%',
-                    top: '50%',
-                    height: '100%'
+                    top: '50%'
                 }}
             />
         }
