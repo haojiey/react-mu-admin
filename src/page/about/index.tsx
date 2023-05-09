@@ -17,11 +17,11 @@ const Index: React.FC = () => (
             <Descriptions.Item label="预览地址" span={3}>
                 <a
                     style={{ color: '#1890ff' }}
-                    href="https://github.com/haojiey/react-mu-admin"
+                    href="http://123.57.250.243/#/login"
                     target="_blank"
                     rel="noreferrer"
                 >
-                    https://github.com/haojiey/react-mu-admin
+                    预览站点
                 </a>
             </Descriptions.Item>
             <Descriptions.Item label="PackAge">
