@@ -5,6 +5,7 @@ import Bread from '../bread'
 import AvatarIcon from './components/AvatarIcon'
 import CollapseIcon from './components/CollapseIcon'
 import FullScreenIcon from './components/FullScreenIcon'
+import GitHub from './components/GitHub'
 import Logo from './components/Logo'
 import NotifyIcon from './components/NotifyIcon'
 import ThemeIcon from './components/ThemeIcon'
@@ -26,6 +27,7 @@ const LayoutHeader = () => {
                 <NotifyIcon />
                 <ThemeIcon />
                 <FullScreenIcon />
+                <GitHub />
                 <UserName />
                 <AvatarIcon />
             </div>

@@ -10,7 +10,7 @@ const NotifyIcon: React.FC = () => {
         navigate(MenuEnum.SYSTEM_NOTIFY)
     }
     return (
-        <div className="mx-[8px] flex cursor-pointer" onClick={jump}>
+        <div className="mx-[8px] flex cursor-pointer" onClick={jump} title="消息通知">
             <Badge size="small" count={5}>
                 <i className="iconfont icon-Bell font-black text-[20px]" />
             </Badge>

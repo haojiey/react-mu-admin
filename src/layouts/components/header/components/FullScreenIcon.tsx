@@ -19,7 +19,7 @@ const FullScreenIcon = () => {
         screenfull.toggle()
     }
     return (
-        <div className="mx-[8px] flex cursor-pointer" onClick={handleFullScreen}>
+        <div className="mx-[8px] flex cursor-pointer" onClick={handleFullScreen} title="缩放">
             <i
                 className={[
                     'iconfont !text-[19px] font-black',

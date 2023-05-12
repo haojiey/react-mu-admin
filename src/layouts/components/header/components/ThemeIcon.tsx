@@ -20,7 +20,7 @@ const ThemeIcon = ({ isDark, setTheme }: any) => {
     }, [])
 
     return (
-        <div className="mx-[8px] flex cursor-pointer" onClick={changeTheme}>
+        <div className="mx-[8px] flex cursor-pointer" onClick={changeTheme} title="换肤">
             <i className="iconfont icon-Clothes font-black text-[20px]" />
         </div>
     )
