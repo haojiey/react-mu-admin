@@ -38,7 +38,7 @@ React mu admin， 基于 `React18`,`TypeScript`,`vite4`,`antd4.x`等相关主流
 
 ## 📚 预览
 
--   [react-mu-admin](http://123.57.250.243/) - 预览站点
+-   [react-mu-admin](http://mu.haojiey.cn/) - 预览站点
 
 <p align="center">
     <img alt="MuAdmin Logo" width="100%" src="./src/assets/preview/preview1.png">

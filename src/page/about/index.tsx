@@ -17,7 +17,7 @@ const Index: React.FC = () => (
             <Descriptions.Item label="预览地址" span={3}>
                 <a
                     style={{ color: '#1890ff' }}
-                    href="http://123.57.250.243/#/login"
+                    href="http://mu.haojiey.cn/"
                     target="_blank"
                     rel="noreferrer"
                 >
